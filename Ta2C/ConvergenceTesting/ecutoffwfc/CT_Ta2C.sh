@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='MoS2 CT_ecutwfc'
+#SBATCH --job-name='Ta2C CT_ecutwfc'
 #SBATCH --output=StdOut.%j
 #SBATCH --error=StdErr.%j
 
@@ -41,9 +41,9 @@ MATDYN_COMMAND='mpirun -np 1 matdyn.x'
 
 export OMP_NUM_THREADS=2
 
-TMP_DIR='/scratch/as3359/MoS2-CT'
+TMP_DIR='/scratch/as3359/Ta2C-CT-ecutoff'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/FYP/MoS2/ecutwfc_CT'
+RESULTS_DIR='/shared/home/as3359/FYP/Ta2C/ecutwfc_CT'
 
 # not a restart
 
@@ -51,14 +51,25 @@ mkdir $TMP_DIR
 mkdir $RESULTS_DIR
 cp $0 $RESULTS_DIR
 cd $RESULTS_DIR
+#========================================================================
+# variables
 
+MX='Ta2C'
+atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
+atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
+
+atom1_position='C             0.0000000000        0.0000000000        0.0000000000 0 0 0'
+atom2_position='Ta            0.6671996597        0.3341664961       -0.0412712937 1 1 1'
+atom3_position='Ta            0.3331987106        0.6661081963        0.0412527245 1 1 1'
+
+
+cell_parameter1='1.034114046   0.000203161   0.000000000'
+cell_parameter2='-0.516206994   0.898604446   0.000000000'
+cell_parameter3='0.000000000   0.000000000  10.000000000'
 
 #========================================================================
 
-#for TM in "Ti" "V" "Cr" "Mn" "Fe" "Co" "Ni" ; do
-#for TM in "Zr" "Nb" "Mo" "Tc" "Ru" "Rh" "Pd" ; do
-MX='MoS2'
-for iecutwfc in {200..300..5} ; do 
+for iecutwfc in {60..300..5} ; do 
 # self-consistent calculation
 cat > $MX.scf.$iecutwfc.in << EOF
  &control
@@ -73,7 +84,7 @@ cat > $MX.scf.$iecutwfc.in << EOF
  /
  &system
     ibrav= 0, 
-    celldm(1)= 6.072,
+    celldm(1)= 5.550,
     nat=  3, ntyp= 2,  
     ecutwfc = $iecutwfc,
     ecutrho = $(( 5*$iecutwfc )),
@@ -84,16 +95,16 @@ cat > $MX.scf.$iecutwfc.in << EOF
     conv_thr =  1.0d-12
  /
 CELL_PARAMETERS (alat)
-   0.976383887  -0.000017274   0.000000000
-  -0.487931186   0.846186578   0.000000000
-   0.000000000   0.000000000   5.000000000
+$cell_parameter1
+ $cell_parameter2
+ $cell_parameter3
 ATOMIC_SPECIES
- Mo  95.94  Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF
- S   32.065    S.pbesol-nl-kjpaw_psl.1.0.0.UPF 
-ATOMIC_POSITIONS (alat)
-Mo            0.0000000000        0.0000000000        1.6880765000
-S             0.4883508000        0.2821722000        2.1737857000
-S             0.4883508000        0.2821722000        1.2023670000
+ $atom1
+ $atom2
+ATOMIC_POSITIONS (crystal)
+ $atom1_position
+ $atom2_position
+ $atom3_position
 K_POINTS {automatic}
 12 12 1 0 0 0
 EOF

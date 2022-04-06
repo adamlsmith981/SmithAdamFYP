@@ -1,0 +1,943 @@
+
+     Program PWSCF v.6.8 starts on  6Apr2022 at 13:24:41 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 2
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     124996 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from MoS2.scf.175.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+     file Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF: wavefunction(s)  4S 4D renormalized
+     file S.pbesol-nl-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1053     838    249               202011   144365   22835
+     Max        1054     839    250               202036   144374   22850
+     Sum        2107    1677    499               404047   288739   45685
+ 
+     Using Slab Decomposition
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       6.0720  a.u.
+     unit-cell volume          =     924.7995 (a.u.)^3
+     number of atoms/cell      =            3
+     number of atomic types    =            2
+     number of electrons       =        26.00
+     number of Kohn-Sham states=           13
+     kinetic-energy cutoff     =     175.0000  Ry
+     charge density cutoff     =     875.0000  Ry
+     scf convergence threshold =      1.0E-12
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation= SLA  PW   PSX  PSC
+                           (   1   4  10   8   0   0   0)
+
+     celldm(1)=   6.072000  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   0.976384  -0.000017   0.000000 )  
+               a(2) = (  -0.487931   0.846187   0.000000 )  
+               a(3) = (   0.000000   0.000000   5.000000 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.024198  0.590577  0.000000 )  
+               b(2) = (  0.000021  1.181785  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.200000 )  
+
+
+     PseudoPot. # 1 for Mo read from file:
+     /shared/home/as3359/pseudo/Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: de57925cfc675213e43241dcc441eda8
+     Pseudo is Projector augmented-wave + core cor, Zval = 14.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1229 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for S  read from file:
+     /shared/home/as3359/pseudo/S.pbesol-nl-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: bf3db50ec3f960682bbc396f1aadd1dd
+     Pseudo is Projector augmented-wave + core cor, Zval =  6.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1151 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Mo            14.00    95.94000     Mo( 1.00)
+        S              6.00    32.06500     S ( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           Mo  tau(   1) = (   0.0000000   0.0000000   1.6880765  )
+         2           S   tau(   2) = (   0.4883508   0.2821722   2.1737857  )
+         3           S   tau(   3) = (   0.4883508   0.2821722   1.2023670  )
+
+     number of k points=    74
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0138889
+        k(    2) = (   0.0000017   0.0984820   0.0000000), wk =   0.0277778
+        k(    3) = (   0.0000035   0.1969641   0.0000000), wk =   0.0277778
+        k(    4) = (   0.0000052   0.2954461   0.0000000), wk =   0.0277778
+        k(    5) = (   0.0000070   0.3939282   0.0000000), wk =   0.0277778
+        k(    6) = (   0.0000087   0.4924102   0.0000000), wk =   0.0277778
+        k(    7) = (  -0.0000105  -0.5908923   0.0000000), wk =   0.0138889
+        k(    8) = (   0.0853498   0.0492147   0.0000000), wk =   0.0277778
+        k(    9) = (   0.0853516   0.1476968   0.0000000), wk =   0.0277778
+        k(   10) = (   0.0853533   0.2461788   0.0000000), wk =   0.0277778
+        k(   11) = (   0.0853550   0.3446609   0.0000000), wk =   0.0277778
+        k(   12) = (   0.0853568   0.4431429   0.0000000), wk =   0.0277778
+        k(   13) = (   0.0853585   0.5416249   0.0000000), wk =   0.0277778
+        k(   14) = (   0.0853394  -0.5416775   0.0000000), wk =   0.0277778
+        k(   15) = (   0.0853411  -0.4431955   0.0000000), wk =   0.0277778
+        k(   16) = (   0.0853428  -0.3447135   0.0000000), wk =   0.0277778
+        k(   17) = (   0.0853446  -0.2462314   0.0000000), wk =   0.0277778
+        k(   18) = (   0.0853463  -0.1477494   0.0000000), wk =   0.0277778
+        k(   19) = (   0.0853481  -0.0492673   0.0000000), wk =   0.0277778
+        k(   20) = (   0.1706996   0.0984294   0.0000000), wk =   0.0277778
+        k(   21) = (   0.1707014   0.1969115   0.0000000), wk =   0.0277778
+        k(   22) = (   0.1707031   0.2953935   0.0000000), wk =   0.0277778
+        k(   23) = (   0.1707049   0.3938756   0.0000000), wk =   0.0277778
+        k(   24) = (   0.1707066   0.4923576   0.0000000), wk =   0.0277778
+        k(   25) = (   0.1707083   0.5908397   0.0000000), wk =   0.0277778
+        k(   26) = (   0.1706892  -0.4924628   0.0000000), wk =   0.0277778
+        k(   27) = (   0.1706909  -0.3939808   0.0000000), wk =   0.0277778
+        k(   28) = (   0.1706927  -0.2954987   0.0000000), wk =   0.0277778
+        k(   29) = (   0.1706944  -0.1970167   0.0000000), wk =   0.0277778
+        k(   30) = (   0.1706961  -0.0985346   0.0000000), wk =   0.0277778
+        k(   31) = (   0.1706979  -0.0000526   0.0000000), wk =   0.0277778
+        k(   32) = (   0.2560494   0.1476442   0.0000000), wk =   0.0277778
+        k(   33) = (   0.2560512   0.2461262   0.0000000), wk =   0.0277778
+        k(   34) = (   0.2560529   0.3446082   0.0000000), wk =   0.0277778
+        k(   35) = (   0.2560547   0.4430903   0.0000000), wk =   0.0277778
+        k(   36) = (   0.2560564   0.5415723   0.0000000), wk =   0.0277778
+        k(   37) = (   0.2560582   0.6400544   0.0000000), wk =   0.0277778
+        k(   38) = (   0.2560390  -0.4432481   0.0000000), wk =   0.0277778
+        k(   39) = (   0.2560407  -0.3447661   0.0000000), wk =   0.0277778
+        k(   40) = (   0.2560425  -0.2462840   0.0000000), wk =   0.0277778
+        k(   41) = (   0.2560442  -0.1478020   0.0000000), wk =   0.0277778
+        k(   42) = (   0.2560460  -0.0493199   0.0000000), wk =   0.0277778
+        k(   43) = (   0.2560477   0.0491621   0.0000000), wk =   0.0277778
+        k(   44) = (   0.3413993   0.1968589   0.0000000), wk =   0.0277778
+        k(   45) = (   0.3414010   0.2953409   0.0000000), wk =   0.0277778
+        k(   46) = (   0.3414027   0.3938230   0.0000000), wk =   0.0277778
+        k(   47) = (   0.3414045   0.4923050   0.0000000), wk =   0.0277778
+        k(   48) = (   0.3414062   0.5907871   0.0000000), wk =   0.0277778
+        k(   49) = (   0.3414080   0.6892691   0.0000000), wk =   0.0277778
+        k(   50) = (   0.3413888  -0.3940334   0.0000000), wk =   0.0277778
+        k(   51) = (   0.3413905  -0.2955513   0.0000000), wk =   0.0277778
+        k(   52) = (   0.3413923  -0.1970693   0.0000000), wk =   0.0277778
+        k(   53) = (   0.3413940  -0.0985872   0.0000000), wk =   0.0277778
+        k(   54) = (   0.3413958  -0.0001052   0.0000000), wk =   0.0277778
+        k(   55) = (   0.3413975   0.0983768   0.0000000), wk =   0.0277778
+        k(   56) = (   0.4267491   0.2460736   0.0000000), wk =   0.0277778
+        k(   57) = (   0.4267508   0.3445556   0.0000000), wk =   0.0277778
+        k(   58) = (   0.4267526   0.4430377   0.0000000), wk =   0.0277778
+        k(   59) = (   0.4267543   0.5415197   0.0000000), wk =   0.0277778
+        k(   60) = (   0.4267560   0.6400018   0.0000000), wk =   0.0277778
+        k(   61) = (   0.4267578   0.7384838   0.0000000), wk =   0.0277778
+        k(   62) = (   0.4267386  -0.3448187   0.0000000), wk =   0.0277778
+        k(   63) = (   0.4267404  -0.2463366   0.0000000), wk =   0.0277778
+        k(   64) = (   0.4267421  -0.1478546   0.0000000), wk =   0.0277778
+        k(   65) = (   0.4267438  -0.0493725   0.0000000), wk =   0.0277778
+        k(   66) = (   0.4267456   0.0491095   0.0000000), wk =   0.0277778
+        k(   67) = (   0.4267473   0.1475916   0.0000000), wk =   0.0277778
+        k(   68) = (  -0.5120989  -0.2952883   0.0000000), wk =   0.0138889
+        k(   69) = (  -0.5120971  -0.1968063   0.0000000), wk =   0.0277778
+        k(   70) = (  -0.5120954  -0.0983242   0.0000000), wk =   0.0277778
+        k(   71) = (  -0.5120937   0.0001578   0.0000000), wk =   0.0277778
+        k(   72) = (  -0.5120919   0.0986398   0.0000000), wk =   0.0277778
+        k(   73) = (  -0.5120902   0.1971219   0.0000000), wk =   0.0277778
+        k(   74) = (  -0.5121093  -0.8861806   0.0000000), wk =   0.0138889
+
+     Dense  grid:   404047 G-vectors     FFT dimensions: (  60,  60, 288)
+
+     Smooth grid:   288739 G-vectors     FFT dimensions: (  50,  50, 256)
+
+     Estimated max dynamical RAM per process >       1.00 GB
+
+     Estimated total dynamical RAM >       2.01 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   25.99914, renormalised to   26.00000
+
+     negative rho (up, down):  4.249E-05 0.000E+00
+     Starting wfcs are   18 randomized atomic wfcs
+     Checking if some PAW data can be deallocated... 
+
+     total cpu time spent up to now is       11.8 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations =  2.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+     ethr =  3.45E-04,  avg # of iterations =  3.9
+
+     negative rho (up, down):  2.692E-05 0.000E+00
+
+     total cpu time spent up to now is       40.4 secs
+
+     total energy              =    -489.69399919 Ry
+     estimated scf accuracy    <       0.14280102 Ry
+
+     iteration #  2     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  5.49E-04,  avg # of iterations =  5.2
+
+     negative rho (up, down):  1.977E-05 0.000E+00
+
+     total cpu time spent up to now is       59.1 secs
+
+     total energy              =    -489.64952397 Ry
+     estimated scf accuracy    <       0.56508225 Ry
+
+     iteration #  3     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  5.49E-04,  avg # of iterations =  5.2
+
+     negative rho (up, down):  1.849E-05 0.000E+00
+
+     total cpu time spent up to now is       77.0 secs
+
+     total energy              =    -489.75350154 Ry
+     estimated scf accuracy    <       0.03226059 Ry
+
+     iteration #  4     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.24E-04,  avg # of iterations =  2.4
+
+     negative rho (up, down):  2.285E-05 0.000E+00
+
+     total cpu time spent up to now is       89.8 secs
+
+     total energy              =    -489.75559976 Ry
+     estimated scf accuracy    <       0.00474513 Ry
+
+     iteration #  5     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.83E-05,  avg # of iterations =  5.0
+
+     negative rho (up, down):  2.322E-05 0.000E+00
+
+     total cpu time spent up to now is      106.9 secs
+
+     total energy              =    -489.75839677 Ry
+     estimated scf accuracy    <       0.00468056 Ry
+
+     iteration #  6     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.80E-05,  avg # of iterations =  1.0
+
+     negative rho (up, down):  2.412E-05 0.000E+00
+
+     total cpu time spent up to now is      117.6 secs
+
+     total energy              =    -489.75762654 Ry
+     estimated scf accuracy    <       0.00329599 Ry
+
+     iteration #  7     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.27E-05,  avg # of iterations =  2.8
+
+     negative rho (up, down):  2.492E-05 0.000E+00
+
+     total cpu time spent up to now is      130.5 secs
+
+     total energy              =    -489.75792392 Ry
+     estimated scf accuracy    <       0.00038050 Ry
+
+     iteration #  8     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.46E-06,  avg # of iterations =  4.7
+
+     negative rho (up, down):  2.664E-05 0.000E+00
+
+     total cpu time spent up to now is      146.0 secs
+
+     total energy              =    -489.75803131 Ry
+     estimated scf accuracy    <       0.00002331 Ry
+
+     iteration #  9     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  8.97E-08,  avg # of iterations =  5.5
+
+     negative rho (up, down):  2.658E-05 0.000E+00
+
+     total cpu time spent up to now is      165.8 secs
+
+     total energy              =    -489.75804174 Ry
+     estimated scf accuracy    <       0.00013099 Ry
+
+     iteration # 10     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  8.97E-08,  avg # of iterations =  3.7
+
+     negative rho (up, down):  2.660E-05 0.000E+00
+
+     total cpu time spent up to now is      180.2 secs
+
+     total energy              =    -489.75802076 Ry
+     estimated scf accuracy    <       0.00007416 Ry
+
+     iteration # 11     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  8.97E-08,  avg # of iterations =  5.2
+
+     negative rho (up, down):  2.669E-05 0.000E+00
+
+     total cpu time spent up to now is      198.1 secs
+
+     total energy              =    -489.75803552 Ry
+     estimated scf accuracy    <       0.00001886 Ry
+
+     iteration # 12     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  7.25E-08,  avg # of iterations =  2.2
+
+     negative rho (up, down):  2.668E-05 0.000E+00
+
+     total cpu time spent up to now is      210.3 secs
+
+     total energy              =    -489.75803572 Ry
+     estimated scf accuracy    <       0.00000443 Ry
+
+     iteration # 13     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.70E-08,  avg # of iterations =  4.6
+
+     negative rho (up, down):  2.670E-05 0.000E+00
+
+     total cpu time spent up to now is      226.1 secs
+
+     total energy              =    -489.75803697 Ry
+     estimated scf accuracy    <       0.00000099 Ry
+
+     iteration # 14     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  3.79E-09,  avg # of iterations =  2.2
+
+     negative rho (up, down):  2.671E-05 0.000E+00
+
+     total cpu time spent up to now is      238.2 secs
+
+     total energy              =    -489.75803698 Ry
+     estimated scf accuracy    <       0.00000038 Ry
+
+     iteration # 15     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.47E-09,  avg # of iterations =  3.3
+
+     negative rho (up, down):  2.671E-05 0.000E+00
+
+     total cpu time spent up to now is      251.3 secs
+
+     total energy              =    -489.75803701 Ry
+     estimated scf accuracy    <       0.00000005 Ry
+
+     iteration # 16     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.87E-10,  avg # of iterations =  4.8
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      266.4 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          9.3E-09 Ry
+
+     iteration # 17     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  3.56E-11,  avg # of iterations =  4.2
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      281.1 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          3.8E-09 Ry
+
+     iteration # 18     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.46E-11,  avg # of iterations =  1.9
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      292.8 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          1.9E-09 Ry
+
+     iteration # 19     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  7.17E-12,  avg # of iterations =  4.4
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      308.1 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          5.0E-10 Ry
+
+     iteration # 20     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.91E-12,  avg # of iterations =  3.6
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      322.5 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          1.1E-09 Ry
+
+     iteration # 21     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.91E-12,  avg # of iterations =  1.4
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      333.5 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          6.6E-10 Ry
+
+     iteration # 22     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.91E-12,  avg # of iterations =  2.3
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      345.9 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          1.3E-10 Ry
+
+     iteration # 23     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  5.00E-13,  avg # of iterations =  3.6
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      359.3 secs
+
+     total energy              =    -489.75803702 Ry
+     estimated scf accuracy    <          1.2E-11 Ry
+
+     iteration # 24     ecut=   175.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.00E-13,  avg # of iterations =  4.0
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     total cpu time spent up to now is      373.5 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 36173 PWs)   bands (ev):
+
+   -60.3492 -34.5533 -34.2856 -34.2843 -13.8551 -12.5035  -5.4143  -2.2345
+    -2.2258  -1.4938  -1.0735  -1.0671   0.2790
+
+          k = 0.0000 0.0985 0.0000 ( 36255 PWs)   bands (ev):
+
+   -60.3461 -34.5474 -34.3156 -34.2911 -13.7453 -12.4582  -5.2903  -2.4746
+    -2.1114  -1.9583  -1.2405  -0.7776   0.2367
+
+          k = 0.0000 0.1970 0.0000 ( 36261 PWs)   bands (ev):
+
+   -60.3378 -34.5311 -34.3969 -34.3095 -13.4325 -12.3293  -4.9796  -3.0229
+    -2.6261  -1.7910  -1.6470  -0.7039   0.0215
+
+          k = 0.0000 0.2954 0.0000 ( 36200 PWs)   bands (ev):
+
+   -60.3264 -34.5088 -34.5063 -34.3345 -12.9678 -12.1392  -4.7596  -3.4844
+    -3.3108  -2.1005  -1.3425  -0.9770  -0.4114
+
+          k = 0.0000 0.3939 0.0000 ( 36128 PWs)   bands (ev):
+
+   -60.3149 -34.6139 -34.4865 -34.3595 -12.4426 -11.9293  -5.0167  -3.9457
+    -3.5887  -2.4810  -1.3007  -0.8969  -0.6651
+
+          k = 0.0000 0.4924 0.0000 ( 36114 PWs)   bands (ev):
+
+   -60.3065 -34.6916 -34.4700 -34.3776 -12.0007 -11.7596  -5.4145  -4.4116
+    -3.7135  -2.7276  -1.5046  -0.5932  -0.4739
+
+          k =-0.0000-0.5909 0.0000 ( 36066 PWs)   bands (ev):
+
+   -60.3035 -34.7199 -34.4640 -34.3842 -11.8218 -11.6934  -5.5870  -4.5845
+    -3.8030  -2.8125  -1.5698  -0.4918  -0.2949
+
+          k = 0.0853 0.0492 0.0000 ( 36247 PWs)   bands (ev):
+
+   -60.3461 -34.5474 -34.3148 -34.2918 -13.7452 -12.4580  -5.2903  -2.4711
+    -2.1153  -1.9561  -1.2459  -0.7748   0.2371
+
+          k = 0.0854 0.1477 0.0000 ( 36259 PWs)   bands (ev):
+
+   -60.3404 -34.5363 -34.3694 -34.3055 -13.5338 -12.3708  -5.0691  -2.8609
+    -2.4003  -1.9032  -1.6498  -0.5821   0.1087
+
+          k = 0.0854 0.2462 0.0000 ( 36202 PWs)   bands (ev):
+
+   -60.3305 -34.5170 -34.4610 -34.3310 -13.1441 -12.2102  -4.7707  -3.3488
+    -2.9634  -2.2307  -1.5736  -0.6198  -0.2245
+
+          k = 0.0854 0.3447 0.0000 ( 36142 PWs)   bands (ev):
+
+   -60.3191 -34.5648 -34.4947 -34.3607 -12.6452 -12.0067  -4.7988  -3.6377
+    -3.5306  -2.6166  -1.3410  -0.9376  -0.5030
+
+          k = 0.0854 0.4431 0.0000 ( 36115 PWs)   bands (ev):
+
+   -60.3092 -34.6534 -34.4752 -34.3862 -12.1522 -11.8106  -5.1608  -4.2546
+    -3.5839  -2.7872  -1.2949  -1.2408  -0.3609
+
+          k = 0.0854 0.5416 0.0000 ( 36085 PWs)   bands (ev):
+
+   -60.3035 -34.7041 -34.4640 -34.4010 -11.8299 -11.6866  -5.4416  -4.6159
+    -3.7353  -2.8382  -1.5174  -1.0958  -0.1134
+
+          k = 0.0853-0.5417 0.0000 ( 36095 PWs)   bands (ev):
+
+   -60.3034 -34.7041 -34.4640 -34.4009 -11.8297 -11.6866  -5.4418  -4.6158
+    -3.7354  -2.8388  -1.5169  -1.0949  -0.1145
+
+          k = 0.0853-0.4432 0.0000 ( 36118 PWs)   bands (ev):
+
+   -60.3092 -34.6535 -34.4752 -34.3862 -12.1519 -11.8105  -5.1612  -4.2544
+    -3.5840  -2.7883  -1.2938  -1.2387  -0.3632
+
+          k = 0.0853-0.3447 0.0000 ( 36146 PWs)   bands (ev):
+
+   -60.3191 -34.5649 -34.4946 -34.3607 -12.6448 -12.0065  -4.7990  -3.6378
+    -3.5307  -2.6173  -1.3392  -0.9368  -0.5053
+
+          k = 0.0853-0.2462 0.0000 ( 36194 PWs)   bands (ev):
+
+   -60.3305 -34.5170 -34.4610 -34.3311 -13.1438 -12.2100  -4.7705  -3.3483
+    -2.9643  -2.2301  -1.5742  -0.6195  -0.2254
+
+          k = 0.0853-0.1477 0.0000 ( 36259 PWs)   bands (ev):
+
+   -60.3404 -34.5363 -34.3693 -34.3057 -13.5336 -12.3707  -5.0688  -2.8588
+    -2.4013  -1.9059  -1.6488  -0.5821   0.1086
+
+          k = 0.0853-0.0493 0.0000 ( 36249 PWs)   bands (ev):
+
+   -60.3461 -34.5474 -34.3145 -34.2922 -13.7451 -12.4580  -5.2902  -2.4680
+    -2.1187  -1.9565  -1.2455  -0.7747   0.2372
+
+          k = 0.1707 0.0984 0.0000 ( 36259 PWs)   bands (ev):
+
+   -60.3378 -34.5311 -34.3962 -34.3104 -13.4322 -12.3287  -4.9795  -3.0203
+    -2.6233  -1.7948  -1.6528  -0.7025   0.0232
+
+          k = 0.1707 0.1969 0.0000 ( 36206 PWs)   bands (ev):
+
+   -60.3305 -34.5170 -34.4606 -34.3315 -13.1439 -12.2098  -4.7707  -3.3474
+    -2.9611  -2.2344  -1.5757  -0.6197  -0.2233
+
+          k = 0.1707 0.2954 0.0000 ( 36185 PWs)   bands (ev):
+
+   -60.3206 -34.5394 -34.4977 -34.3688 -12.7171 -12.0329  -4.6895  -3.4870
+    -3.3881  -2.8932  -1.5784  -0.6546  -0.4346
+
+          k = 0.1707 0.3939 0.0000 ( 36104 PWs)   bands (ev):
+
+   -60.3107 -34.6133 -34.4783 -34.4099 -12.2398 -11.8351  -4.8884  -4.1144
+    -3.3892  -3.0078  -1.8996  -0.9772  -0.3637
+
+          k = 0.1707 0.4924 0.0000 ( 36118 PWs)   bands (ev):
+
+   -60.3034 -34.6656 -34.4640 -34.4413 -11.8458 -11.6729  -5.1012  -4.6737
+    -3.5275  -2.9125  -2.0139  -1.3740  -0.1093
+
+          k = 0.1707 0.5908 0.0000 ( 36120 PWs)   bands (ev):
+
+   -60.3008 -34.6845 -34.4588 -34.4530 -11.6889 -11.6090  -5.1812  -4.8774
+    -3.6692  -2.8310  -1.9983  -1.5662   0.0716
+
+          k = 0.1707-0.4925 0.0000 ( 36115 PWs)   bands (ev):
+
+   -60.3034 -34.6658 -34.4640 -34.4413 -11.8453 -11.6728  -5.1019  -4.6735
+    -3.5277  -2.9137  -2.0123  -1.3730  -0.1110
+
+          k = 0.1707-0.3940 0.0000 ( 36093 PWs)   bands (ev):
+
+   -60.3107 -34.6136 -34.4782 -34.4099 -12.2391 -11.8348  -4.8891  -4.1142
+    -3.3893  -3.0092  -1.8975  -0.9761  -0.3660
+
+          k = 0.1707-0.2955 0.0000 ( 36183 PWs)   bands (ev):
+
+   -60.3206 -34.5396 -34.4976 -34.3689 -12.7163 -12.0326  -4.6896  -3.4863
+    -3.3883  -2.8940  -1.5779  -0.6538  -0.4368
+
+          k = 0.1707-0.1970 0.0000 ( 36206 PWs)   bands (ev):
+
+   -60.3305 -34.5169 -34.4606 -34.3318 -13.1433 -12.2095  -4.7703  -3.3456
+    -2.9618  -2.2345  -1.5779  -0.6192  -0.2240
+
+          k = 0.1707-0.0985 0.0000 ( 36265 PWs)   bands (ev):
+
+   -60.3377 -34.5311 -34.3960 -34.3107 -13.4319 -12.3286  -4.9792  -3.0179
+    -2.6235  -1.7979  -1.6534  -0.7017   0.0233
+
+          k = 0.1707-0.0001 0.0000 ( 36261 PWs)   bands (ev):
+
+   -60.3404 -34.5362 -34.3688 -34.3064 -13.5334 -12.3703  -5.0687  -2.8569
+    -2.3994  -1.9088  -1.6524  -0.5812   0.1096
+
+          k = 0.2560 0.1476 0.0000 ( 36198 PWs)   bands (ev):
+
+   -60.3263 -34.5088 -34.5058 -34.3355 -12.9671 -12.1381  -4.7596  -3.4821
+    -3.3087  -2.1068  -1.3463  -0.9761  -0.4086
+
+          k = 0.2561 0.2461 0.0000 ( 36150 PWs)   bands (ev):
+
+   -60.3191 -34.5644 -34.4946 -34.3615 -12.6447 -12.0056  -4.7988  -3.6360
+    -3.5285  -2.6214  -1.3436  -0.9375  -0.5015
+
+          k = 0.2561 0.3446 0.0000 ( 36115 PWs)   bands (ev):
+
+   -60.3107 -34.6131 -34.4782 -34.4103 -12.2395 -11.8343  -4.8881  -4.1143
+    -3.3882  -3.0096  -1.9010  -0.9771  -0.3633
+
+          k = 0.2561 0.4431 0.0000 ( 36112 PWs)   bands (ev):
+
+   -60.3034 -34.6397 -34.4683 -34.4640 -11.8534 -11.6655  -4.8956  -4.7007
+    -3.2617  -2.9580  -2.6205  -1.2850  -0.1374
+
+          k = 0.2561 0.5416 0.0000 ( 36144 PWs)   bands (ev):
+
+   -60.2992 -34.6453 -34.5115 -34.4558 -11.6121 -11.5568  -5.0667  -4.7707
+    -3.5326  -2.8882  -2.7486  -1.6396   0.1798
+
+          k = 0.2561 0.6401 0.0000 ( 36146 PWs)   bands (ev):
+
+   -60.2992 -34.6454 -34.5115 -34.4557 -11.6117 -11.5567  -5.0666  -4.7713
+    -3.5329  -2.8872  -2.7492  -1.6391   0.1791
+
+          k = 0.2560-0.4432 0.0000 ( 36112 PWs)   bands (ev):
+
+   -60.3034 -34.6400 -34.4683 -34.4639 -11.8525 -11.6652  -4.8966  -4.7007
+    -3.2621  -2.9593  -2.6187  -1.2843  -0.1390
+
+          k = 0.2560-0.3448 0.0000 ( 36115 PWs)   bands (ev):
+
+   -60.3106 -34.6133 -34.4781 -34.4106 -12.2384 -11.8339  -4.8887  -4.1140
+    -3.3869  -3.0113  -1.9006  -0.9764  -0.3654
+
+          k = 0.2560-0.2463 0.0000 ( 36150 PWs)   bands (ev):
+
+   -60.3190 -34.5645 -34.4945 -34.3618 -12.6436 -12.0052  -4.7988  -3.6358
+    -3.5266  -2.6230  -1.3445  -0.9369  -0.5035
+
+          k = 0.2560-0.1478 0.0000 ( 36198 PWs)   bands (ev):
+
+   -60.3263 -34.5087 -34.5057 -34.3359 -12.9665 -12.1378  -4.7593  -3.4799
+    -3.3086  -2.1083  -1.3492  -0.9754  -0.4087
+
+          k = 0.2560-0.0493 0.0000 ( 36202 PWs)   bands (ev):
+
+   -60.3305 -34.5169 -34.4605 -34.3322 -13.1429 -12.2090  -4.7702  -3.3460
+    -2.9621  -2.2351  -1.5782  -0.6191  -0.2233
+
+          k = 0.2560 0.0492 0.0000 ( 36202 PWs)   bands (ev):
+
+   -60.3305 -34.5169 -34.4606 -34.3320 -13.1431 -12.2091  -4.7703  -3.3472
+    -2.9623  -2.2345  -1.5766  -0.6193  -0.2235
+
+          k = 0.3414 0.1969 0.0000 ( 36134 PWs)   bands (ev):
+
+   -60.3148 -34.6136 -34.4864 -34.3605 -12.4415 -11.9274  -5.0165  -3.9451
+    -3.5868  -2.4877  -1.2991  -0.9013  -0.6618
+
+          k = 0.3414 0.2953 0.0000 ( 36121 PWs)   bands (ev):
+
+   -60.3091 -34.6531 -34.4751 -34.3872 -12.1513 -11.8086  -5.1600  -4.2547
+    -3.5827  -2.7922  -1.2937  -1.2431  -0.3600
+
+          k = 0.3414 0.3938 0.0000 ( 36111 PWs)   bands (ev):
+
+   -60.3034 -34.6653 -34.4639 -34.4420 -11.8451 -11.6714  -5.1003  -4.6748
+    -3.5270  -2.9152  -2.0163  -1.3729  -0.1081
+
+          k = 0.3414 0.4923 0.0000 ( 36164 PWs)   bands (ev):
+
+   -60.2992 -34.6451 -34.5119 -34.4557 -11.6116 -11.5560  -5.0675  -4.7702
+    -3.5321  -2.8898  -2.7498  -1.6386   0.1803
+
+          k = 0.3414 0.5908 0.0000 ( 36222 PWs)   bands (ev):
+
+   -60.2976 -34.6127 -34.5627 -34.4527 -11.5243 -11.5099  -5.2233  -4.3603
+    -3.8338  -3.2102  -2.5872  -1.8344   0.3756
+
+          k = 0.3414 0.6893 0.0000 ( 36172 PWs)   bands (ev):
+
+   -60.2991 -34.6452 -34.5120 -34.4557 -11.6108 -11.5557  -5.0676  -4.7709
+    -3.5316  -2.8898  -2.7506  -1.6385   0.1798
+
+          k = 0.3414-0.3940 0.0000 ( 36110 PWs)   bands (ev):
+
+   -60.3033 -34.6655 -34.4638 -34.4423 -11.8438 -11.6709  -5.1008  -4.6747
+    -3.5258  -2.9168  -2.0169  -1.3726  -0.1093
+
+          k = 0.3414-0.2956 0.0000 ( 36127 PWs)   bands (ev):
+
+   -60.3091 -34.6532 -34.4750 -34.3877 -12.1499 -11.8080  -5.1602  -4.2544
+    -3.5810  -2.7946  -1.2933  -1.2438  -0.3620
+
+          k = 0.3414-0.1971 0.0000 ( 36134 PWs)   bands (ev):
+
+   -60.3148 -34.6136 -34.4863 -34.3610 -12.4404 -11.9269  -5.0163  -3.9448
+    -3.5847  -2.4898  -1.2987  -0.9041  -0.6620
+
+          k = 0.3414-0.0986 0.0000 ( 36152 PWs)   bands (ev):
+
+   -60.3190 -34.5646 -34.4945 -34.3620 -12.6432 -12.0046  -4.7992  -3.6371
+    -3.5273  -2.6227  -1.3428  -0.9367  -0.5045
+
+          k = 0.3414-0.0001 0.0000 ( 36175 PWs)   bands (ev):
+
+   -60.3205 -34.5395 -34.4975 -34.3694 -12.7155 -12.0314  -4.6900  -3.4868
+    -3.3896  -2.8948  -1.5765  -0.6537  -0.4375
+
+          k = 0.3414 0.0984 0.0000 ( 36150 PWs)   bands (ev):
+
+   -60.3190 -34.5646 -34.4945 -34.3616 -12.6438 -12.0048  -4.7994  -3.6374
+    -3.5293  -2.6217  -1.3401  -0.9364  -0.5049
+
+          k = 0.4267 0.2461 0.0000 ( 36114 PWs)   bands (ev):
+
+   -60.3064 -34.6914 -34.4699 -34.3787 -11.9994 -11.7569  -5.4136  -4.4126
+    -3.7129  -2.7345  -1.5019  -0.5985  -0.4702
+
+          k = 0.4268 0.3446 0.0000 ( 36097 PWs)   bands (ev):
+
+   -60.3034 -34.7038 -34.4639 -34.4020 -11.8286 -11.6840  -5.4403  -4.6175
+    -3.7353  -2.8438  -1.5150  -1.0988  -0.1120
+
+          k = 0.4268 0.4430 0.0000 ( 36136 PWs)   bands (ev):
+
+   -60.3007 -34.6842 -34.4587 -34.4538 -11.6878 -11.6068  -5.1805  -4.8795
+    -3.6691  -2.8346  -2.0007  -1.5640   0.0726
+
+          k = 0.4268 0.5415 0.0000 ( 36160 PWs)   bands (ev):
+
+   -60.2991 -34.6453 -34.5120 -34.4557 -11.6109 -11.5553  -5.0684  -4.7720
+    -3.5320  -2.8882  -2.7509  -1.6377   0.1784
+
+          k = 0.4268 0.6400 0.0000 ( 36166 PWs)   bands (ev):
+
+   -60.2991 -34.6453 -34.5121 -34.4556 -11.6104 -11.5551  -5.0685  -4.7721
+    -3.5311  -2.8893  -2.7511  -1.6379   0.1786
+
+          k = 0.4268 0.7385 0.0000 ( 36140 PWs)   bands (ev):
+
+   -60.3006 -34.6843 -34.4586 -34.4541 -11.6866 -11.6064  -5.1806  -4.8796
+    -3.6681  -2.8356  -2.0022  -1.5643   0.0727
+
+          k = 0.4267-0.3448 0.0000 ( 36101 PWs)   bands (ev):
+
+   -60.3033 -34.7039 -34.4638 -34.4025 -11.8270 -11.6834  -5.4403  -4.6173
+    -3.7341  -2.8461  -1.5149  -1.1002  -0.1127
+
+          k = 0.4267-0.2463 0.0000 ( 36124 PWs)   bands (ev):
+
+   -60.3064 -34.6914 -34.4698 -34.3793 -11.9979 -11.7563  -5.4135  -4.4123
+    -3.7114  -2.7370  -1.5018  -0.6014  -0.4699
+
+          k = 0.4267-0.1479 0.0000 ( 36130 PWs)   bands (ev):
+
+   -60.3090 -34.6533 -34.4750 -34.3877 -12.1495 -11.8076  -5.1611  -4.2554
+    -3.5810  -2.7945  -1.2928  -1.2423  -0.3637
+
+          k = 0.4267-0.0494 0.0000 ( 36118 PWs)   bands (ev):
+
+   -60.3106 -34.6135 -34.4781 -34.4108 -12.2375 -11.8328  -4.8902  -4.1162
+    -3.3875  -3.0112  -1.8979  -0.9759  -0.3677
+
+          k = 0.4267 0.0491 0.0000 ( 36107 PWs)   bands (ev):
+
+   -60.3106 -34.6135 -34.4781 -34.4106 -12.2379 -11.8329  -4.8903  -4.1162
+    -3.3889  -3.0109  -1.8962  -0.9755  -0.3679
+
+          k = 0.4267 0.1476 0.0000 ( 36115 PWs)   bands (ev):
+
+   -60.3091 -34.6533 -34.4751 -34.3872 -12.1505 -11.8080  -5.1613  -4.2556
+    -3.5828  -2.7933  -1.2923  -1.2395  -0.3640
+
+          k =-0.5121-0.2953 0.0000 ( 36058 PWs)   bands (ev):
+
+   -60.3033 -34.7196 -34.4638 -34.3854 -11.8203 -11.6904  -5.5858  -4.5862
+    -3.8030  -2.8195  -1.5667  -0.4976  -0.2910
+
+          k =-0.5121-0.1968 0.0000 ( 36093 PWs)   bands (ev):
+
+   -60.3033 -34.7039 -34.4639 -34.4020 -11.8283 -11.6838  -5.4410  -4.6178
+    -3.7352  -2.8444  -1.5143  -1.0973  -0.1139
+
+          k =-0.5121-0.0983 0.0000 ( 36118 PWs)   bands (ev):
+
+   -60.3033 -34.6657 -34.4639 -34.4421 -11.8440 -11.6705  -5.1025  -4.6759
+    -3.5270  -2.9165  -2.0132  -1.3714  -0.1119
+
+          k =-0.5121 0.0002 0.0000 ( 36112 PWs)   bands (ev):
+
+   -60.3033 -34.6401 -34.4687 -34.4639 -11.8515 -11.6637  -4.8984  -4.7028
+    -3.2623  -2.9602  -2.6169  -1.2833  -0.1412
+
+          k =-0.5121 0.0986 0.0000 ( 36122 PWs)   bands (ev):
+
+   -60.3033 -34.6656 -34.4638 -34.4424 -11.8432 -11.6702  -5.1023  -4.6760
+    -3.5256  -2.9170  -2.0154  -1.3720  -0.1114
+
+          k =-0.5121 0.1971 0.0000 ( 36099 PWs)   bands (ev):
+
+   -60.3033 -34.7040 -34.4637 -34.4025 -11.8269 -11.6832  -5.4408  -4.6177
+    -3.7340  -2.8461  -1.5146  -1.0997  -0.1136
+
+          k =-0.5121-0.8862 0.0000 ( 36070 PWs)   bands (ev):
+
+   -60.3033 -34.7197 -34.4637 -34.3859 -11.8186 -11.6896  -5.5856  -4.5858
+    -3.8019  -2.8221  -1.5666  -0.5006  -0.2903
+
+     highest occupied level (ev):     0.3756
+
+!    total energy              =    -489.75803702 Ry
+
+     total all-electron energy =     -9688.215882 Ry
+     estimated scf accuracy    <          7.0E-13 Ry
+
+     The total energy is the sum of the following terms:
+     one-electron contribution =    -813.90666507 Ry
+     hartree contribution      =     410.77436661 Ry
+     xc contribution           =     -29.52473615 Ry
+     ewald contribution        =     255.78841210 Ry
+     one-center paw contrib.   =    -312.88941452 Ry
+
+     convergence has been achieved in  24 iterations
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00026872    0.00012899   -0.00000015
+     atom    2 type  2   force =    -0.00013436   -0.00006450   -0.00032766
+     atom    3 type  2   force =    -0.00013436   -0.00006449    0.00032781
+
+     Total force =     0.000590     Total SCF correction =     0.000003
+
+
+     Computing stress (Cartesian axis) and pressure
+
+
+     negative rho (up, down):  2.672E-05 0.000E+00
+          total   stress  (Ry/bohr**3)                   (kbar)     P=        0.66
+   0.00000949  -0.00000085   0.00000000            1.40       -0.13        0.00
+  -0.00000085   0.00000634   0.00000000           -0.13        0.93        0.00
+   0.00000000   0.00000000  -0.00000234            0.00        0.00       -0.34
+
+
+     Writing output data file /scratch/as3359/MoS2-CT/MoS2.save/
+ 
+     init_run     :     20.73s CPU     11.70s WALL (       1 calls)
+     electrons    :    706.43s CPU    361.71s WALL (       1 calls)
+     forces       :      7.65s CPU      3.92s WALL (       1 calls)
+     stress       :     21.72s CPU     11.18s WALL (       1 calls)
+
+     Called by init_run:
+     wfcinit      :     12.03s CPU      6.16s WALL (       1 calls)
+     potinit      :      2.60s CPU      1.34s WALL (       1 calls)
+     hinit0       :      5.13s CPU      3.64s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :    571.93s CPU    289.23s WALL (      25 calls)
+     sum_band     :    104.74s CPU     54.82s WALL (      25 calls)
+     v_of_rho     :      8.17s CPU      4.50s WALL (      25 calls)
+     newd         :     13.68s CPU      8.82s WALL (      25 calls)
+     PAW_pot      :      4.84s CPU      2.53s WALL (      25 calls)
+     mix_rho      :      2.97s CPU      1.77s WALL (      25 calls)
+
+     Called by c_bands:
+     init_us_2    :     21.95s CPU     10.99s WALL (    3922 calls)
+     cegterg      :    536.98s CPU    271.53s WALL (    1850 calls)
+
+     Called by *egterg:
+     cdiaghg      :      3.59s CPU      1.83s WALL (    8360 calls)
+     h_psi        :    459.36s CPU    232.49s WALL (    8508 calls)
+     s_psi        :     19.38s CPU      9.72s WALL (    8508 calls)
+     g_psi        :      3.07s CPU      1.54s WALL (    6584 calls)
+
+     Called by h_psi:
+     h_psi:calbec :     15.81s CPU      7.95s WALL (    8508 calls)
+     vloc_psi     :    413.08s CPU    209.22s WALL (    8508 calls)
+     add_vuspsi   :     26.24s CPU     13.15s WALL (    8508 calls)
+
+     General routines
+     calbec       :     20.66s CPU     10.40s WALL (   10728 calls)
+     fft          :      4.04s CPU      2.20s WALL (     349 calls)
+     ffts         :      0.40s CPU      0.20s WALL (      50 calls)
+     fftw         :    409.51s CPU    207.64s WALL (  160192 calls)
+     interpolate  :      0.73s CPU      0.42s WALL (      25 calls)
+ 
+     Parallel routines
+ 
+     PWSCF        :  12m38.39s CPU   6m30.16s WALL
+
+ 
+   This run was terminated on:  13:31:11   6Apr2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

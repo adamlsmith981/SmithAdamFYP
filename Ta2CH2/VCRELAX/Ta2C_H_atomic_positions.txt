@@ -1,0 +1,64 @@
+Initial positions:
+   
+Cell parameters after vc-relax 1:
+
+Atomic positions after vc-relax 1:
+   
+
+
+
+Atomic positions after relax 1:
+--
+     wrong number of columns in ATOMIC_POSITIONS
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     stopping ...
+
+
+
+Initial positions:
+   
+Cell parameters after vc-relax 1:
+
+Atomic positions after vc-relax 1:
+   
+
+
+
+Atomic positions after relax 1:
+--
+     wrong number of columns in ATOMIC_POSITIONS
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     stopping ...
+
+
+
+Initial positions:
+C 0.0000000 0.0000000 0.0000000
+Ta 0.5203090 0.3004005 -0.4101496
+Ta -0.0000000 0.6008011 0.4101496
+H -0.0031880 -0.0004963 0.9240391
+H -0.0011642 0.0030090 -0.9240391
+Cell parameters after vc-relax 1:
+   1.017295083  -0.000177182   0.000000000
+  -0.508801024   0.881713945   0.000000000
+   0.000000000   0.000000000  10.000000000
+Atomic positions after vc-relax 1:
+C 0.0000000 0.0000000 0.0000000
+Ta 0.5088008 0.2948413 -0.4364511
+Ta -0.0007447 0.5869407 0.4364532
+H -0.0017928 -0.0015314 0.8341930
+H 0.0002769 0.0024412 -0.8341930
+Total force = 0.000944
+P= -0.36
+total cpu time spent up to now is 8340.8 secs
+Atomic positions after relax 1:
+C             0.0000000000        0.0000000000        0.0000000000
+Ta            0.5088008000        0.2948413000       -0.4364511000
+Ta           -0.0007447000        0.5869407000        0.4364532000
+H            -0.0017928000       -0.0015314000        0.8341930000
+H             0.0002769000        0.0024412000       -0.8341930000
+Total force = 0.001079
+P= -0.36
+total cpu time spent up to now is 349.8 secs

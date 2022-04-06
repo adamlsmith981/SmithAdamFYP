@@ -58,7 +58,7 @@ cd $RESULTS_DIR
 #for TM in "Ti" "V" "Cr" "Mn" "Fe" "Co" "Ni" ; do
 #for TM in "Zr" "Nb" "Mo" "Tc" "Ru" "Rh" "Pd" ; do
 MX='MoS2'
-for iecutwfc in {200..300..5} ; do 
+for iecutwfc in {60..200..5} ; do 
 # self-consistent calculation
 cat > $MX.scf.$iecutwfc.in << EOF
  &control
