@@ -1,0 +1,54 @@
+ &control
+    calculation='relax'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    forc_conv_thr=1.0d-3,
+    etot_conv_thr=1.0d-4,
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Ta4C3_loop/'
+    max_seconds = 28800
+ /
+ &system    
+    ibrav= 0, 
+    celldm(1)= 5.550,
+     nat=  7, ntyp= 2,    
+    ecutwfc =60.00,
+    ecutrho = 400.00,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+ &ions
+    ion_dynamics='bfgs',
+ /
+CELL_PARAMETERS { alat }
+   1.049723137  -0.000000690   0.000000000
+  -0.524862166   0.909090000   0.000000000
+   0.000000000   0.000000000   6.000000000
+ATOMIC_SPECIES
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ O   15.9994  O.pbesol-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS (alat)
+==> standard input <==
+
+==> Ta2C_H_raw_cartesian_atomic_positions <==
+Ta            0.0000003998        0.6060615935        2.4234532661
+--
+ATOMIC_POSITIONS (alat)
+Ta           -0.0000011382        0.6060580822       -0.1621615708
+C            -0.0000004714       -0.0000010724        0.2348879056
+Ta            0.5248613899        0.3030295892        0.6774528082
+C            -0.0000004235        0.6060596897        1.1306507651
+Ta           -0.0000000325       -0.0000001175        1.5838857115
+C             0.5248618748        0.3030306715        2.0263978143
+Ta            0.0000003998        0.6060615935        2.4234532661
+K_POINTS {automatic}
+ 12 12 1 0 0 0

@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Ta2CF2_loop'
+#SBATCH --job-name='Ta4C3_loop'
 #SBATCH --output=StdOut.o.%j
 #SBATCH --error=StdErr.e.%j
 
@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=12:00:00
+#SBATCH --time=14:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -35,15 +35,15 @@ PH_COMMAND='mpirun -np 2 ph.x'
 PH_IMAGE_COMMAND="mpirun -np 2 ph.x -ni 1"
 DYNMAT_COMMAND='mpirun -np 1 dynmat.x'
 PLOTBAND_COMMAND='mpirun -np 1 plotband.x'
-BANDS_COMMAND='mpirun -np 2 bands.x'
+BANDS_COMMAND='mpirun -np $NCORES bands.x'
 Q2R_COMMAND='mpirun -np 1 q2r.x'
 MATDYN_COMMAND='mpirun -np 1 matdyn.x'
 
 export OMP_NUM_THREADS=2
 
-TMP_DIR='/scratch/as3359/Ta2CF2_looping'
+TMP_DIR='/scratch/as3359/Ta4C3_loop'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/FYP/Ta2CF2/vcr'
+RESULTS_DIR='/shared/home/as3359/Ta4C3/vcr-loop'
 
 # not a restart
 
@@ -57,33 +57,34 @@ cd $RESULTS_DIR
 fthresh=1.0d-3
 ethresh=1.0d-4
 ecut=60.00
-rcut=300.00
+rcut=400.00
 elthresh=1.0d-12
 pthresh=1.0
-celldm=5.8997
+celldm=5.550
 
-nats=5
-ntyp=3
+nats=7
+ntyp=2
 
 atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
-atom3='F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF'
+atom3='O   15.9994  O.pbesol-n-rrkjus_psl.1.0.0.UPF'
 
-atom1_position='Ta       0.3333333330        0.6666666670        0.0084777904    1   1   1'
-atom2_position='C        0.0000000000        0.0000000000        0.0809653684    1   1   1'
-atom3_position='Ta       0.6666666670        0.3333333330        0.1534684720   1   1   1'
-atom4_position='F        0.0000000000        0.0000000000        0.2293479205   1   1   1'
-atom5_position='F        0.0000000000        0.0000000000       -0.0673918107   1   1   1'
-
+atom1_position='Ta            0.3333310091        0.6666639694       -0.0269029980 1 1 1 '
+atom2_position='C            -0.0000006861       -0.0000007950        0.0391217521 1 1 1 '
+atom3_position='Ta            0.6666676137        0.3333344308        0.0929114019 1 1 1 '
+atom4_position='C             0.3333327732        0.6666660249        0.1784924085 1 1 1 '
+atom5_position='Ta           -0.0000007727       -0.0000008897        0.2539695769 1 1 1 '
+atom6_position='C             0.6666677659        0.3333346028        0.3477411373 1 1 1 '
+atom7_position='Ta            0.3333356300        0.6666693238        0.4237611653 1 1 1 '
 
 nkx=12
 nky=12
 
-cell_parameter1='0.946100374   0.000000000   0.000000000'
-cell_parameter2='-0.473050186   0.819346959   0.000000000'
-cell_parameter3='0.000000000   0.000000000   6.000000000'
+cell_parameter1='1.182549010   0.000005488   0.000000000 '
+cell_parameter2='-0.591269752   1.024091997   0.000000000'
+cell_parameter3='0.000000000   0.000000000  6.000000000 '
 
-prefix='Ta2CF2'
+prefix='Ta4C3'
 
 # vc relax calculation
 cat > $prefix.vcrelax.in << EOF
@@ -121,13 +122,14 @@ cat > $prefix.vcrelax.in << EOF
 ATOMIC_SPECIES
  $atom1
  $atom2
- $atom3
 ATOMIC_POSITIONS (crystal)
  $atom1_position
  $atom2_position
  $atom3_position
  $atom4_position
  $atom5_position
+ $atom6_position
+ $atom7_position
 K_POINTS {automatic}
  $nkx $nky 1 0 0 0 
 CELL_PARAMETERS (alat= $celldm)
@@ -367,7 +369,7 @@ K_POINTS {automatic}
 EOF
 
 $ECHO " running the vc-relax calculation ; \c"
-$PW_COMMAND -input $prefix.scf.vcrelax$loop_counter.in > $prefix.scf.vcrelax$loop_counter.out
+$PW_COMMAND -input $prefix.scf.vcrelax$loop_counter.in &> $prefix.scf.vcrelax$loop_counter.out
 $ECHO " done"
 
 # Get relevant unprocessed lines from output file that contain relevant data
@@ -469,7 +471,7 @@ K_POINTS {automatic}
 EOF
 
 $ECHO " running the relax calculation ; \c"
-$PW_COMMAND -input $prefix.scf.relax$loop_counter.in > $prefix.scf.relax$loop_counter.out
+$PW_COMMAND -input $prefix.scf.relax$loop_counter.in &> $prefix.scf.relax$loop_counter.out
 $ECHO " done"
 
 # Get relevant unprocessed lines from output file that contain relevant data
@@ -569,7 +571,7 @@ K_POINTS {automatic}
 $nkx $nky 1 0 0 0
 EOF
 
-# $PW_COMMAND -input $prefix.scf.final.in &> $prefix.scf.final.out
+$PW_COMMAND -input $prefix.scf.final.in &> $prefix.scf.final.out
 $PW_COMMAND <$prefix.scf.final.in > $prefix.scf.final.out
 
 rm -rf $TMP_DIR

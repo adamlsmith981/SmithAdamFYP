@@ -1,0 +1,47 @@
+ &control
+    calculation='relax'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    forc_conv_thr=1.0d-3,
+    etot_conv_thr=1.0d-4,
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Ta2CF2_looping/'
+    max_seconds = 28800
+ /
+ &system
+    ibrav= 0, 
+    celldm(1)= 5.8997,
+    nat=  5, ntyp= 3,   
+    ecutwfc = 60.00,
+    ecutrho = 300.00,
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+    diagonalization = 'cg'
+ /
+ &ions
+    ion_dynamics='bfgs'
+ /
+ &cell
+    cell_dynamics='bfgs', cell_dofree ='2Dxy'
+ /
+ATOMIC_SPECIES
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS (alat)
+Ta -0.0000000 0.5462313 0.0508587
+C 0.0000000 0.0000000 0.4857213
+Ta 0.4730502 0.2731157 0.9207839
+F 0.0000000 0.0000000 1.3761278
+F 0.0000000 0.0000000 -0.4042852
+K_POINTS {automatic}
+ 12 12 1 0 0 0 
+CELL_PARAMETERS { alat }
+   0.946100374   0.000000000   0.000000000
+  -0.473050186   0.819346959   0.000000000
+   0.000000000   0.000000000   6.000000000

@@ -69,18 +69,18 @@ atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
 atom3='F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF'
 
-atom1_position='Ta       0.3333333330        0.6666666670        0.0084777904    1   1   1'
-atom2_position='C        0.0000000000        0.0000000000        0.0809653684    1   1   1'
-atom3_position='Ta       0.6666666670        0.3333333330        0.1534684720   1   1   1'
-atom4_position='F        0.0000000000        0.0000000000        0.2293479205   1   1   1'
-atom5_position='F        0.0000000000        0.0000000000       -0.0673918107   1   1   1'
+atom1_position='Ta       0.3333333330        0.6666666670        0.0180472743    0   0   1'
+atom2_position='C        0.0000000000        0.0000000000        0.0870512094    0   0   1'
+atom3_position='Ta       0.6666666670        0.3333333330        0.1541084506   0   0   1'
+atom4_position='F        0.0000000000        0.0000000000        0.2323327386   1   1   1'
+atom5_position='F        0.0000000000        0.0000000000       -0.0866719324   1   1   1'
 
 
 nkx=12
 nky=12
 
-cell_parameter1='0.946100374   0.000000000   0.000000000'
-cell_parameter2='-0.473050186   0.819346959   0.000000000'
+cell_parameter1='0.958905775   0.000000000   0.000000000'
+cell_parameter2='-0.479452887   0.830436762   0.000000000'
 cell_parameter3='0.000000000   0.000000000   6.000000000'
 
 prefix='Ta2CF2'
@@ -367,7 +367,7 @@ K_POINTS {automatic}
 EOF
 
 $ECHO " running the vc-relax calculation ; \c"
-$PW_COMMAND -input $prefix.scf.vcrelax$loop_counter.in > $prefix.scf.vcrelax$loop_counter.out
+
 $ECHO " done"
 
 # Get relevant unprocessed lines from output file that contain relevant data
@@ -469,7 +469,7 @@ K_POINTS {automatic}
 EOF
 
 $ECHO " running the relax calculation ; \c"
-$PW_COMMAND -input $prefix.scf.relax$loop_counter.in > $prefix.scf.relax$loop_counter.out
+
 $ECHO " done"
 
 # Get relevant unprocessed lines from output file that contain relevant data

@@ -1,0 +1,43 @@
+(standard_in) 1: syntax error
+(standard_in) 1: syntax error
+/var/spool/slurmd/job16108/slurm_script: line 315: [: -gt: unary operator expected
+/var/spool/slurmd/job16108/slurm_script: line 369:  running the vc-relax calculation ; \c: command not found
+/var/spool/slurmd/job16108/slurm_script: line 371:  done: command not found
+grep: Ta2CF2.scf.vcrelax1.out: No such file or directory
+grep: Ta2CF2.scf.vcrelax1.out: No such file or directory
+grep: Ta2CF2.scf.vcrelax1.out: No such file or directory
+grep: Ta2CF2.scf.vcrelax1.out: No such file or directory
+grep: Ta2CF2.scf.vcrelax1.out: No such file or directory
+tail: cannot open ‘5’ for reading: No such file or directory
+/var/spool/slurmd/job16108/slurm_script: line 471:  running the relax calculation ; \c: command not found
+/var/spool/slurmd/job16108/slurm_script: line 473:  done: command not found
+grep: Ta2CF2.scf.relax1.out: No such file or directory
+grep: Ta2CF2.scf.relax1.out: No such file or directory
+grep: Ta2CF2.scf.relax1.out: No such file or directory
+grep: Ta2CF2.scf.relax1.out: No such file or directory
+(standard_in) 1: syntax error
+(standard_in) 1: syntax error
+/var/spool/slurmd/job16108/slurm_script: line 523: [: -lt: unary operator expected
+/var/spool/slurmd/job16108/slurm_script: line 315: [: -gt: unary operator expected
+forrtl: severe (59): list-directed I/O syntax error, unit -5, file Internal List-Directed Read
+Image              PC                Routine            Line        Source             
+pw.x               000000000640B26B  for__io_return        Unknown  Unknown
+pw.x               000000000643C662  for_read_int_lis_     Unknown  Unknown
+pw.x               000000000643B3E8  for_read_int_lis      Unknown  Unknown
+pw.x               0000000000AB693C  Unknown               Unknown  Unknown
+pw.x               00000000009B8FC3  Unknown               Unknown  Unknown
+pw.x               0000000000414BA8  Unknown               Unknown  Unknown
+pw.x               0000000000414A12  Unknown               Unknown  Unknown
+libc-2.17.so       00002AF9EF171555  __libc_start_main     Unknown  Unknown
+pw.x               0000000000414929  Unknown               Unknown  Unknown
+forrtl: severe (59): list-directed I/O syntax error, unit -5, file Internal List-Directed Read
+Image              PC                Routine            Line        Source             
+pw.x               000000000640B26B  for__io_return        Unknown  Unknown
+pw.x               000000000643C662  for_read_int_lis_     Unknown  Unknown
+pw.x               000000000643B3E8  for_read_int_lis      Unknown  Unknown
+pw.x               0000000000AB693C  Unknown               Unknown  Unknown
+pw.x               00000000009B8FC3  Unknown               Unknown  Unknown
+pw.x               0000000000414BA8  Unknown               Unknown  Unknown
+pw.x               0000000000414A12  Unknown               Unknown  Unknown
+libc-2.17.so       00002B1A9FB85555  __libc_start_main     Unknown  Unknown
+pw.x               0000000000414929  Unknown               Unknown  Unknown
