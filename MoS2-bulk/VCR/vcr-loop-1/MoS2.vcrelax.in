@@ -1,0 +1,46 @@
+ &control
+    calculation='vc-relax'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    forc_conv_thr=1.0d-3,
+    etot_conv_thr=1.0d-4,
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/MoS2_loop/'
+    max_seconds = 56600
+ /
+ &system
+    ibrav= 0, 
+    celldm(1)= 6.072,
+    nat=  6, ntyp= 2,   
+    ecutwfc =60.00,
+    ecutrho = 300.00
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.3
+    conv_thr =  1.0d-12
+ /
+ &ions
+    ion_dynamics='bfgs'
+ /
+ &cell
+    cell_dynamics='bfgs', cell_dofree ='2Dxy'
+ /
+ATOMIC_SPECIES
+ Mo  95.94  Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF
+ S   32.065    S.pbesol-nl-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS (crystal)
+ Mo            0.0000000000        0.0000000000        0.1500000000 0 0 1
+ S             0.6668121771        0.3334769838        0.2000000000 1 1 1
+ S             0.6668121779        0.3334769867        0.1000000000 1 1 1
+ Mo            0.0000000000        0.0000000000        0.3500000000 0 0 1
+ S             0.6668121771        0.3334769838        0.4000000000 1 1 1
+ S             0.6668121779        0.3334769867        0.3000000000 1 1 1
+K_POINTS {automatic}
+ 12 12 1 0 0 0 
+CELL_PARAMETERS (alat= 6.072)
+ 0.976383887  -0.000017274   0.000000000 
+ -0.487931186   0.846186578   0.000000000
+ 0.000000000   0.000000000  8.000000000 

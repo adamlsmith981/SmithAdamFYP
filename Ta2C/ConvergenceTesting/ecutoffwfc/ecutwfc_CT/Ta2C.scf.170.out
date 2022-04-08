@@ -1,0 +1,227 @@
+
+     Program PWSCF v.6.8 starts on  7Apr2022 at  1:53: 3 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 2
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     124969 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from Ta2C.scf.170.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+     file Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF: wavefunction(s)  5S 5P renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         971     771    225               332553   237763   37785
+     Max         972     772    226               332560   237768   37802
+     Sum        1943    1543    451               665113   475531   75587
+ 
+     Using Slab Decomposition
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       5.5500  a.u.
+     unit-cell volume          =    1588.7844 (a.u.)^3
+     number of atoms/cell      =            3
+     number of atomic types    =            2
+     number of electrons       =        58.00
+     number of Kohn-Sham states=           29
+     kinetic-energy cutoff     =     170.0000  Ry
+     charge density cutoff     =     850.0000  Ry
+     scf convergence threshold =      1.0E-12
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation= PBESOL
+                           (   1   4  10   8   0   0   0)
+
+     celldm(1)=   5.550000  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.034114   0.000203   0.000000 )  
+               a(2) = (  -0.516207   0.898604   0.000000 )  
+               a(3) = (   0.000000   0.000000  10.000000 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  0.966902  0.555441  0.000000 )  
+               b(2) = ( -0.000219  1.112711  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.100000 )  
+
+
+     PseudoPot. # 1 for Ta read from file:
+     /shared/home/as3359/pseudo/Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: f099565ffaca9b150a52e9412a28e20b
+     Pseudo is Ultrasoft + core correction, Zval = 27.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3
+     Using radial grid of 1273 points,  8 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+                l(7) =   3
+                l(8) =   3
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for C  read from file:
+     /shared/home/as3359/pseudo/C.pbesol-n-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: 05995be603a8a7c99da3dc4413f31573
+     Pseudo is Ultrasoft + core correction, Zval =  4.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3MaX
+     Using radial grid of 1073 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Ta            27.00   180.94788     Ta( 1.00)
+        C              4.00    12.01070     C ( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           C   tau(   1) = (   0.0000000   0.0000000   0.0000000  )
+         2           Ta  tau(   2) = (   0.5174615   0.3004190  -0.4127129  )
+         3           Ta  tau(   3) = (   0.0007158   0.5986355   0.4125272  )
+
+     number of k points=    74
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0138889
+        k(    2) = (  -0.0000182   0.0927259   0.0000000), wk =   0.0277778
+        k(    3) = (  -0.0000364   0.1854519   0.0000000), wk =   0.0277778
+        k(    4) = (  -0.0000547   0.2781778   0.0000000), wk =   0.0277778
+        k(    5) = (  -0.0000729   0.3709037   0.0000000), wk =   0.0277778
+        k(    6) = (  -0.0000911   0.4636296   0.0000000), wk =   0.0277778
+        k(    7) = (   0.0001093  -0.5563556   0.0000000), wk =   0.0138889
+        k(    8) = (   0.0805752   0.0462867   0.0000000), wk =   0.0277778
+        k(    9) = (   0.0805570   0.1390127   0.0000000), wk =   0.0277778
+        k(   10) = (   0.0805388   0.2317386   0.0000000), wk =   0.0277778
+        k(   11) = (   0.0805205   0.3244645   0.0000000), wk =   0.0277778
+        k(   12) = (   0.0805023   0.4171904   0.0000000), wk =   0.0277778
+        k(   13) = (   0.0804841   0.5099164   0.0000000), wk =   0.0277778
+        k(   14) = (   0.0806845  -0.5100688   0.0000000), wk =   0.0277778
+        k(   15) = (   0.0806663  -0.4173429   0.0000000), wk =   0.0277778
+        k(   16) = (   0.0806481  -0.3246170   0.0000000), wk =   0.0277778
+        k(   17) = (   0.0806298  -0.2318910   0.0000000), wk =   0.0277778
+        k(   18) = (   0.0806116  -0.1391651   0.0000000), wk =   0.0277778
+        k(   19) = (   0.0805934  -0.0464392   0.0000000), wk =   0.0277778
+        k(   20) = (   0.1611504   0.0925735   0.0000000), wk =   0.0277778
+        k(   21) = (   0.1611322   0.1852994   0.0000000), wk =   0.0277778
+        k(   22) = (   0.1611139   0.2780253   0.0000000), wk =   0.0277778
+        k(   23) = (   0.1610957   0.3707513   0.0000000), wk =   0.0277778
+        k(   24) = (   0.1610775   0.4634772   0.0000000), wk =   0.0277778
+        k(   25) = (   0.1610593   0.5562031   0.0000000), wk =   0.0277778
+        k(   26) = (   0.1612597  -0.4637821   0.0000000), wk =   0.0277778
+        k(   27) = (   0.1612415  -0.3710561   0.0000000), wk =   0.0277778
+        k(   28) = (   0.1612232  -0.2783302   0.0000000), wk =   0.0277778
+        k(   29) = (   0.1612050  -0.1856043   0.0000000), wk =   0.0277778
+        k(   30) = (   0.1611868  -0.0928784   0.0000000), wk =   0.0277778
+        k(   31) = (   0.1611686  -0.0001524   0.0000000), wk =   0.0277778
+        k(   32) = (   0.2417256   0.1388602   0.0000000), wk =   0.0277778
+        k(   33) = (   0.2417073   0.2315862   0.0000000), wk =   0.0277778
+        k(   34) = (   0.2416891   0.3243121   0.0000000), wk =   0.0277778
+        k(   35) = (   0.2416709   0.4170380   0.0000000), wk =   0.0277778
+        k(   36) = (   0.2416527   0.5097639   0.0000000), wk =   0.0277778
+        k(   37) = (   0.2416345   0.6024899   0.0000000), wk =   0.0277778
+        k(   38) = (   0.2418349  -0.4174953   0.0000000), wk =   0.0277778
+        k(   39) = (   0.2418166  -0.3247694   0.0000000), wk =   0.0277778
+        k(   40) = (   0.2417984  -0.2320435   0.0000000), wk =   0.0277778
+        k(   41) = (   0.2417802  -0.1393175   0.0000000), wk =   0.0277778
+        k(   42) = (   0.2417620  -0.0465916   0.0000000), wk =   0.0277778
+        k(   43) = (   0.2417438   0.0461343   0.0000000), wk =   0.0277778
+        k(   44) = (   0.3223007   0.1851470   0.0000000), wk =   0.0277778
+        k(   45) = (   0.3222825   0.2778729   0.0000000), wk =   0.0277778
+        k(   46) = (   0.3222643   0.3705988   0.0000000), wk =   0.0277778
+        k(   47) = (   0.3222461   0.4633248   0.0000000), wk =   0.0277778
+        k(   48) = (   0.3222279   0.5560507   0.0000000), wk =   0.0277778
+        k(   49) = (   0.3222097   0.6487766   0.0000000), wk =   0.0277778
+        k(   50) = (   0.3224100  -0.3712086   0.0000000), wk =   0.0277778
+        k(   51) = (   0.3223918  -0.2784827   0.0000000), wk =   0.0277778
+        k(   52) = (   0.3223736  -0.1857567   0.0000000), wk =   0.0277778
+        k(   53) = (   0.3223554  -0.0930308   0.0000000), wk =   0.0277778
+        k(   54) = (   0.3223372  -0.0003049   0.0000000), wk =   0.0277778
+        k(   55) = (   0.3223190   0.0924210   0.0000000), wk =   0.0277778
+        k(   56) = (   0.4028759   0.2314337   0.0000000), wk =   0.0277778
+        k(   57) = (   0.4028577   0.3241596   0.0000000), wk =   0.0277778
+        k(   58) = (   0.4028395   0.4168856   0.0000000), wk =   0.0277778
+        k(   59) = (   0.4028213   0.5096115   0.0000000), wk =   0.0277778
+        k(   60) = (   0.4028031   0.6023374   0.0000000), wk =   0.0277778
+        k(   61) = (   0.4027848   0.6950633   0.0000000), wk =   0.0277778
+        k(   62) = (   0.4029852  -0.3249218   0.0000000), wk =   0.0277778
+        k(   63) = (   0.4029670  -0.2321959   0.0000000), wk =   0.0277778
+        k(   64) = (   0.4029488  -0.1394700   0.0000000), wk =   0.0277778
+        k(   65) = (   0.4029306  -0.0467441   0.0000000), wk =   0.0277778
+        k(   66) = (   0.4029124   0.0459819   0.0000000), wk =   0.0277778
+        k(   67) = (   0.4028941   0.1387078   0.0000000), wk =   0.0277778
+        k(   68) = (  -0.4834511  -0.2777205   0.0000000), wk =   0.0138889
+        k(   69) = (  -0.4834693  -0.1849945   0.0000000), wk =   0.0277778
+        k(   70) = (  -0.4834875  -0.0922686   0.0000000), wk =   0.0277778
+        k(   71) = (  -0.4835058   0.0004573   0.0000000), wk =   0.0277778
+        k(   72) = (  -0.4835240   0.0931832   0.0000000), wk =   0.0277778
+        k(   73) = (  -0.4835422   0.1859092   0.0000000), wk =   0.0277778
+        k(   74) = (  -0.4833418  -0.8340760   0.0000000), wk =   0.0138889
+
+     Dense  grid:   665113 G-vectors     FFT dimensions: (  54,  54, 540)
+
+     Smooth grid:   475531 G-vectors     FFT dimensions: (  48,  48, 480)
+
+     Estimated max dynamical RAM per process >       4.09 GB
+
+     Estimated total dynamical RAM >       8.18 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   57.99842, renormalised to   58.00000
+
+     negative rho (up, down):  6.622E-05 0.000E+00
+     Starting wfcs are   38 randomized atomic wfcs
+
+     total cpu time spent up to now is       28.8 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   170.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations =  2.1
+
+     negative rho (up, down):  2.704E-07 0.000E+00
+
+     total cpu time spent up to now is       70.0 secs
+
+     total energy              =   -1372.42503358 Ry
+     estimated scf accuracy    <       1.29594457 Ry
+
+     iteration #  2     ecut=   170.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  2.23E-03,  avg # of iterations =  6.6

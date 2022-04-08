@@ -57,12 +57,13 @@ cd $RESULTS_DIR
 MX='Ta2CH2'
 atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
+atom3='H    1.000   H.pbesol-rrkjus_psl.0.1.UPF'
 
 atom1_position='C             0.0000000000        0.0000000000        0.0000000000 0 0 0'
 atom2_position='Ta            0.6666666670        0.3333333330       -0.0410149592 1 1 1'
 atom3_position='Ta            0.3333333330        0.6666666670        0.0410149592 1 1 1'
 atom4_position='H            -0.0033389048       -0.0005507363        0.0924039106 1 1 1'
-atom5_position='H             0.0005507363        0.0033389048        -0.0924039106 1 1 1'
+atom5_position='H             0.0005507363        0.0033389048       -0.0924039106 1 1 1'
 
 
 cell_parameter1='1.040617955   0.000000000   0.000000000'
@@ -71,25 +72,28 @@ cell_parameter3='0.000000000   0.000000000  10.000000000'
 
 #========================================================================
 
-for iecutwfc in {60..300..5} ; do 
+for iecutwfc in {200..300..20} ; do 
 # self-consistent calculation
 cat > $MX.scf.$iecutwfc.in << EOF
  &control
     calculation='scf'
     restart_mode='from_scratch',
-    prefix='$MX',
+    prefix='Ta',
     tstress = .true.
     tprnfor = .true.
-    pseudo_dir = '$PSEUDO_DIR/',
-    outdir='$TMP_DIR/'
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Ta2CH2-VCrelax/'
     max_seconds = 28800
  /
- &system
+ &system    
     ibrav= 0, 
     celldm(1)= 5.550,
-    nat=  5, ntyp= 3,  
+     nat=  5, ntyp= 3,  
     ecutwfc = $iecutwfc,
-    ecutrho = $(( 5*$iecutwfc )),
+    ecutrho = $(( 4*$iecutwfc )),
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
  /
  &electrons
     mixing_mode = 'plain'
@@ -97,19 +101,19 @@ cat > $MX.scf.$iecutwfc.in << EOF
     conv_thr =  1.0d-12
  /
 CELL_PARAMETERS (alat)
- $cell_parameter1
- $cell_parameter2
- $cell_parameter3
+   1.017295083  -0.000177182   0.000000000
+  -0.508801024   0.881713945   0.000000000
+   0.000000000   0.000000000  10.000000000
 ATOMIC_SPECIES
- $atom1
- $atom2
- $atom3
-ATOMIC_POSITIONS (crystal)
-C             0.0000000000        0.0000000000        0.0000000000 0 0 0
-Ta            0.5088008000        0.2948413000       -0.0436451100 0 0 0
-Ta           -0.0007447000        0.5869407000        0.0436453200 0 0 0
-H            -0.0017928000       -0.0015314000        0.0834193000 0 0 0
-H             0.0002769000        0.0024412000       -0.0834193000 0 0 0
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ H    1.000   H.pbesol-rrkjus_psl.0.1.UPF
+ATOMIC_POSITIONS (alat)
+C             0.0000000000        0.0000000000        0.0000000000
+Ta            0.5088008000        0.2948413000       -0.4364511000
+Ta           -0.0007447000        0.5869407000        0.4364532000
+H            -0.0017928000       -0.0015314000        0.8341930000
+H             0.0002769000        0.0024412000       -0.8341930000
 K_POINTS {automatic}
 12 12 1 0 0 0
 EOF

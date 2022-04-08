@@ -1,0 +1,41 @@
+ &control
+    calculation='scf'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Ta2CO2_loop/'
+    max_seconds = 28800
+ /
+ &system    
+    ibrav= 0, 
+    celldm(1)= 5.550,
+     nat=  5, ntyp= 3,  
+    ecutwfc = 70.00,
+    ecutrho = 700.00,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+CELL_PARAMETERS (alat)
+   1.043484737   0.000819003   0.000000000
+  -0.521733898   0.901398720   0.000000000
+   0.000000000   0.000000000  10.000000000
+ATOMIC_SPECIES
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ O   15.9994  O.pbesol-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS (alat)
+C            -0.1376285000        0.0180317000        0.0193959000
+Ta            0.3841511000        0.3192090000       -0.4303689000
+Ta           -0.1376464000        0.6197159000        0.4272142000
+O             0.3845753000        0.3202170000        0.8049305000
+O            -0.1374362000        0.0185582000       -0.8211192000
+K_POINTS {automatic}
+12 12 1 0 0 0

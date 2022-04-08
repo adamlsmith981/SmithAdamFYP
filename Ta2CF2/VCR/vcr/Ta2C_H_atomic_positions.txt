@@ -1,0 +1,42 @@
+Initial positions:
+Ta 0.0000000 0.5462313 0.0508667
+C 0.0000000 0.0000000 0.4857922
+Ta 0.4730502 0.2731157 0.9208108
+F 0.0000000 0.0000000 1.3760875
+F 0.4730502 0.2731157 -0.4043509
+Cell parameters after vc-relax 1:
+   0.957455708  -0.000000000   0.000000000
+  -0.478727853   0.829180967   0.000000000
+   0.000000000   0.000000000   6.000000000
+Atomic positions after vc-relax 1:
+Ta 0.0000000 0.5527873 0.0711408
+C 0.0000000 -0.0000000 0.5006731
+Ta 0.4787279 0.2763937 0.8897214
+F -0.0000000 0.0000000 1.3627847
+F 0.4787279 0.2763937 -0.3951135
+Total force = 0.000613
+P= -1.75
+total cpu time spent up to now is 1686.2 secs
+Atomic positions after relax 1:
+Ta           -0.0000000000        0.5527873000        0.0709378424
+C             0.0000000000        0.0000000000        0.5007947589
+Ta            0.4787279000        0.2763937000        0.8898037770
+F             0.0000000000        0.0000000000        1.3627962815
+F             0.4787279000        0.2763937000       -0.3951261597
+Total force = 0.000685
+P= -1.78
+total cpu time spent up to now is 176.7 secs
+Cell parameters after vc-relax 1:
+
+Atomic positions after vc-relax 1:
+==> standard input <==
+
+==> Ta2C_H_raw_cartesian_atomic_positions <==
+
+
+total cpu time spent up to now is 60.4 secs
+Atomic positions after relax 1:
+
+
+
+

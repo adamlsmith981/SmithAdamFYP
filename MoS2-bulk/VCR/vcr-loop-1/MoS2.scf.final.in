@@ -1,0 +1,39 @@
+ &control
+    calculation='scf'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/MoS2_loop/'
+    max_seconds = 28800
+ /
+ &system    
+    ibrav= 0, 
+    celldm(1)= 6.072,
+     nat=  6, ntyp= 2,  
+    ecutwfc = 60.00,
+    ecutrho = 300.00,
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+CELL_PARAMETERS (alat)
+   0.976797941  -0.000201857   0.000000000
+  -0.488298690   0.846122243   0.000000000
+   0.000000000   0.000000000   8.000000000
+ATOMIC_SPECIES
+ Mo  95.94  Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF
+ S   32.065    S.pbesol-nl-kjpaw_psl.1.0.0.UPF
+ 
+ATOMIC_POSITIONS (alat)
+Mo            0.0000000000        0.0000000000        0.8657911000
+S             0.4884432000        0.2819379000        1.3514993000
+S             0.4884704000        0.2819219000        0.3800977000
+Mo            0.0000000000        0.0000000000        3.1342089000
+S             0.4884704000        0.2819219000        3.6199023000
+S             0.4884432000        0.2819379000        2.6485007000
+K_POINTS {automatic}
+12 12 1 0 0 0

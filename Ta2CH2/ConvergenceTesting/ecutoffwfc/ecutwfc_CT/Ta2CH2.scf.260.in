@@ -1,0 +1,41 @@
+ &control
+    calculation='scf'
+    restart_mode='from_scratch',
+    prefix='Ta',
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Ta2CH2-VCrelax/'
+    max_seconds = 28800
+ /
+ &system    
+    ibrav= 0, 
+    celldm(1)= 5.550,
+     nat=  5, ntyp= 3,  
+    ecutwfc = 260,
+    ecutrho = 1040,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+CELL_PARAMETERS (alat)
+   1.017295083  -0.000177182   0.000000000
+  -0.508801024   0.881713945   0.000000000
+   0.000000000   0.000000000  10.000000000
+ATOMIC_SPECIES
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ H    1.000   H.pbesol-rrkjus_psl.0.1.UPF
+ATOMIC_POSITIONS (alat)
+C             0.0000000000        0.0000000000        0.0000000000
+Ta            0.5088008000        0.2948413000       -0.4364511000
+Ta           -0.0007447000        0.5869407000        0.4364532000
+H            -0.0017928000       -0.0015314000        0.8341930000
+H             0.0002769000        0.0024412000       -0.8341930000
+K_POINTS {automatic}
+12 12 1 0 0 0
