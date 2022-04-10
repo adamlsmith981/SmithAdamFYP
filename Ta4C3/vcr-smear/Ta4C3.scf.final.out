@@ -1,5 +1,5 @@
 
-     Program PWSCF v.6.8 starts on  7Apr2022 at 21:43:12 
+     Program PWSCF v.6.8 starts on  8Apr2022 at 19:57:59 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -16,7 +16,7 @@
 
      MPI processes distributed on     1 nodes
      R & G space division:  proc/nbgrp/npool/nimage =       2
-     124329 MiB available memory on the printing compute node when the environment starts
+     124349 MiB available memory on the printing compute node when the environment starts
  
      Waiting for input...
      Reading input from standard input

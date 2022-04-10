@@ -13,7 +13,7 @@
     celldm(1)= 5.550,
      nat=  7, ntyp= 2,  
     ecutwfc = 60.00,
-    ecutrho = 400.00,
+    ecutrho = 300.00,
     occupations='smearing',
     smearing='m-v', 
     degauss=0.001,
@@ -25,8 +25,8 @@
     diagonalization = 'cg'
  /
 CELL_PARAMETERS (alat)
-   1.050417934  -0.000000171   0.000000000
-  -0.525209115   0.909689321   0.000000000
+   1.049630781  -0.000019654   0.000000000
+  -0.524832411   0.909036839   0.000000000
    0.000000000   0.000000000   6.000000000
 ATOMIC_SPECIES
  Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF

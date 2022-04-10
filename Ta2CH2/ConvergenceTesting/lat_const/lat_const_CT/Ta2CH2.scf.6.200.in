@@ -1,0 +1,41 @@
+ &control
+    calculation='scf'
+    restart_mode='restart',
+    prefix='Ta2CH2',
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Mos2_ct_lat/'
+    max_seconds = 7200
+ /
+ &system
+    ibrav= 0, 
+    celldm(1)= 6.200,
+    nat=  3, ntyp= 2,   
+    ecutwfc = 150.00,
+    ecutrho = 600.00
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+ &ions
+    ion_dynamics='bfgs'
+ /
+ &cell
+    cell_dynamics='bfgs'
+ /
+CELL_PARAMETERS (alat)
+1.040617955   0.000000000   0.000000000
+ -0.520308977   0.901201584   0.000000000
+ 0.000000000   0.000000000  10.000000000
+ATOMIC_SPECIES
+ Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+ C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS (crystal)
+ C             0.0000000000        0.0000000000        0.0000000000 0 0 0
+ Ta            0.6666666670        0.3333333330       -0.0410149592 1 1 1
+ Ta            0.3333333330        0.6666666670        0.0410149592 1 1 1
+ K_POINTS {automatic}
+ 15 15 1 0 0 0 
