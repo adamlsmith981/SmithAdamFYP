@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Mos2 CT lat'
+#SBATCH --job-name='Ta2C CT lat'
 #SBATCH --output=StdOut.%j
 #SBATCH --error=StdErr.%j
 
@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=03:00:00
+#SBATCH --time=05:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -71,7 +71,7 @@ cell_parameter1='1.034114046   0.000203161   0.000000000'
 cell_parameter2='-0.516206994   0.898604446   0.000000000'
 cell_parameter3='0.000000000   0.000000000  10.000000000'
 
-for i in {5000..6400..100} ; do 
+for i in {5500..5800..50} ; do 
 celldim=$(bc <<< "scale=3;$i/1000")
 # self-consistent calculation
 cat > $MX.scf.$celldim.in << EOF

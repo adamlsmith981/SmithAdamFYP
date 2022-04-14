@@ -71,7 +71,7 @@ cell_parameter1='1.040617955   0.000000000   0.000000000'
 cell_parameter2='-0.520308977   0.901201584   0.000000000'
 cell_parameter3='0.000000000   0.000000000  10.000000000'
 
-for i in {5400..5800..25} ; do 
+for i in {5500..6000..50} ; do 
 celldim=$(bc <<< "scale=3;$i/1000")
 # self-consistent calculation
 cat > $MX.scf.$celldim.in << EOF

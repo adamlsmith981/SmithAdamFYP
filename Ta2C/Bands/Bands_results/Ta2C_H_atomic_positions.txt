@@ -1,0 +1,14 @@
+Initial positions:
+   
+Cell parameters after vc-relax 1:
+
+Atomic positions after vc-relax 1:
+   
+
+
+
+Atomic positions after relax 1:
+
+
+
+

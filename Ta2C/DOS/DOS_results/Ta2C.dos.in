@@ -1,0 +1,7 @@
+&DOS
+    prefix="Ta"
+    outdir="/scratch/as3359/Ta2C_dos/"
+    fildos="Ta2C.dos.dat"
+    emin=-9.0
+    emax=16.0
+/
