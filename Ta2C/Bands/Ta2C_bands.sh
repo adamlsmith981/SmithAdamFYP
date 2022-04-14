@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Ta2C_loop'
+#SBATCH --job-name='Ta2C_bands'
 #SBATCH --output=StdOut.o.%j
 #SBATCH --error=StdErr.e.%j
 
@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=10:00:00
+#SBATCH --time=04:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -64,6 +64,7 @@ celldm=5.550
 
 nats=3
 ntyp=2
+nbnds=32
 
 atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
@@ -101,6 +102,9 @@ cat > $prefix.scf.in << EOF
     nat=  $nats, ntyp= $ntyp,   
     ecutwfc =$ecut,
     ecutrho = $rcut,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
  /
  &electrons
     mixing_mode = 'plain'
@@ -215,6 +219,9 @@ cat > $prefix.nscf.in << EOF
     nat=  $nats, ntyp= $ntyp,   
     ecutwfc = $ecut,
     ecutrho = $rcut,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
  /
  &electrons
     mixing_mode = 'plain'
@@ -235,7 +242,7 @@ CELL_PARAMETERS { alat }
 $current_cell_parameters
 EOF
 
-$PW_COMMAND -input $prefix.relax.in > $prefix.relax.out
+$PW_COMMAND -input $prefix.nscf.in > $prefix.nscf.out
 
 # Get relevant unprocessed lines from output file that contain relevant data
 
@@ -315,9 +322,12 @@ cat > $prefix.bands.in << EOF
  &system
     ibrav= 0, 
     celldm(1)= $celldm,
-    nat=  $nats, ntyp= $ntyp, nbnd= 32,  
+    nat=  $nats, ntyp= $ntyp, nbnd= $nbnds,  
     ecutwfc = $ecut,
     ecutrho = $rcut,
+    occupations='smearing',
+    smearing='m-v', 
+    degauss=0.001,
  /
  &electrons
     mixing_mode = 'plain'
