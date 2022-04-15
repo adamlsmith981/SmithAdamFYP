@@ -1,0 +1,7 @@
+Results for the lattice constant convegence in Ta2CO2
+
+lattice constant (bohr)           total energy  (Ry)
+5.6       -1438.35852948
+5.62       -1438.35610443
+5.64       -1438.35290402
+5.66       -1438.34895707

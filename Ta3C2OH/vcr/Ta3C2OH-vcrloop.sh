@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Ta4C3_loop'
+#SBATCH --job-name='Ta3C2OH_loop'
 #SBATCH --output=StdOut.o.%j
 #SBATCH --error=StdErr.e.%j
 
@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=14:00:00
+#SBATCH --time=15:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -41,9 +41,9 @@ MATDYN_COMMAND='mpirun -np 1 matdyn.x'
 
 export OMP_NUM_THREADS=2
 
-TMP_DIR='/scratch/as3359/Ta4C3_loop'
+TMP_DIR='/scratch/as3359/Ta3C2OH_loop'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/Ta4C3/vcr2'
+RESULTS_DIR='/shared/home/as3359/FYP/Ta3C2OH/vcr-loop'
 
 # not a restart
 
@@ -56,34 +56,36 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=60.00
-rcut=250.00
+ecut=70.00
+rcut=300.00
 elthresh=1.0d-12
 pthresh=1.0
-celldm=5.750
+celldm=5.900
 
 nats=7
-ntyp=2
+ntyp=4
 
 atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
+atom3='O   15.9994  O.pbesol-n-rrkjus_psl.1.0.0.UPF'
+atom4='H    1.000   H.pbesol-rrkjus_psl.0.1.UPF'
 
-atom1_position='Ta            0.3333310091        0.6666639694       -0.0269029980 1 1 1 '
-atom2_position='C            -0.0000006861       -0.0000007950        0.0391217521 1 1 1 '
-atom3_position='Ta            0.6666676137        0.3333344308        0.1129114019 1 1 1 '
-atom4_position='C             0.3333327732        0.6666660249        0.1884924085 1 1 1 '
-atom5_position='Ta           -0.0000007727       -0.0000008897        0.2639695769 1 1 1 '
-atom6_position='C             0.6666677659        0.3333346028        0.3377411373 1 1 1 '
-atom7_position='Ta            0.3333356300        0.6666693238        0.4037611653 1 1 1 '
+atom1_position='Ta            0.0000076202        0.5753645261        0.7347088682 1 1 1 '
+atom2_position='C             0.0000057425        0.0000119580        1.1001305396 1 1 1 '
+atom3_position='Ta            0.4982671617        0.2876804117        1.5254274591 1 1 1 '
+atom4_position='C             -0.0000016562        0.5753446197        1.9811697513 1 1 1 '
+atom5_position='Ta            -0.0000066843       -0.0000138349        2.3497244033 1 1 1 '
+atom6_position='O             -0.0000097359        0.5753282492        2.7859839916 1 1 1 '
+atom7_position='H             -0.0000104689        0.5753278703        3.1137994869 1 1 1 '
 
 nkx=12
 nky=12
 
-cell_parameter1='1.046475111  -0.000000172   0.000000000 '
-cell_parameter2='-0.523237704   0.906274738   0.000000000'
+cell_parameter1='1.040049433  -0.000000962   0.000000000 '
+cell_parameter2='-0.520025553   0.900713953   0.000000000'
 cell_parameter3='0.000000000   0.000000000  7.000000000 '
 
-prefix='Ta4C3'
+prefix='Ta3C2OH'
 
 # vc relax calculation
 cat > $prefix.vcrelax.in << EOF
@@ -105,9 +107,6 @@ cat > $prefix.vcrelax.in << EOF
     nat=  $nats, ntyp= $ntyp,   
     ecutwfc =$ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.005,
  /
  &electrons
     mixing_mode = 'plain'
@@ -124,7 +123,9 @@ cat > $prefix.vcrelax.in << EOF
 ATOMIC_SPECIES
  $atom1
  $atom2
-ATOMIC_POSITIONS (crystal)
+ $atom3
+ $atom4
+ATOMIC_POSITIONS (alat)
  $atom1_position
  $atom2_position
  $atom3_position
@@ -230,15 +231,11 @@ cat > $prefix.relax.in << EOF
     nat=  $nats, ntyp= $ntyp,   
     ecutwfc = $ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.005,
  /
  &electrons
     mixing_mode = 'plain'
     mixing_beta = 0.7
     conv_thr =  1.0d-12
-    diagonalization = 'cg'
  /
  &ions
     ion_dynamics='bfgs'
@@ -348,15 +345,11 @@ cat > $prefix.scf.vcrelax$loop_counter.in << EOF
     nat=  $nats, ntyp= $ntyp,    
     ecutwfc = $ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.005,
  /
  &electrons
     mixing_mode = 'plain'
     mixing_beta = 0.7
     conv_thr =  $elthresh
-    diagonalization = 'cg'
  /
  &ions
     ion_dynamics='bfgs',
@@ -456,15 +449,11 @@ cat > $prefix.scf.relax$loop_counter.in << EOF
      nat=  $nats, ntyp= $ntyp,    
     ecutwfc =$ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.005,
  /
  &electrons
     mixing_mode = 'plain'
     mixing_beta = 0.7
     conv_thr =  $elthresh
-    diagonalization = 'cg'
  /
  &ions
     ion_dynamics='bfgs',
@@ -563,15 +552,11 @@ cat > $prefix.scf.final.in << EOF
      nat=  $nats, ntyp= $ntyp,  
     ecutwfc = $ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.005,
  /
  &electrons
     mixing_mode = 'plain'
     mixing_beta = 0.7
     conv_thr =  $elthresh
-    diagonalization = 'cg'
  /
 CELL_PARAMETERS (alat)
 $current_cell_parameters

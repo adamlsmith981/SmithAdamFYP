@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from Bands import *
 
-datafile='Bands_results/Ta2C.Bandx.dat.gnu'
+datafile='Ta2C.Bandx.dat.gnu'
 fermi = -0.2033 # get from nscf / scf step out
-symmetryfile='Bands_results/Ta2C.bandx.out'
+symmetryfile='Ta2C.bandx.out'
 bool_shift_efermi= True
 fig, ax = plt.subplots()
 
