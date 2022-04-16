@@ -1,0 +1,18 @@
+Initial positions:
+C 0.0000000 0.0000000 0.0000000
+Ta 0.5202621 0.3003735 -0.4102757
+Ta 0.0000000 0.6007470 0.4102757
+Cell parameters after scf:
+
+Atomic positions after scf:
+C 0.0000000 0.0000000 0.0000000
+Ta 0.5202621 0.3003735 -0.4102757
+Ta 0.0000000 0.6007470 0.4102757
+Total force = 0.000405
+P= 0.34
+total cpu time spent up to now is 362.1 secs
+Atomic positions after nscf:
+
+
+
+total cpu time spent up to now is 180.0 secs

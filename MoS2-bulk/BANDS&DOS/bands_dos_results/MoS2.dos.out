@@ -1,0 +1,57 @@
+
+     Program DOS v.6.8 starts on 16Apr2022 at 15:35:28 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 2
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     121956 MiB available memory on the printing compute node when the environment starts
+ 
+
+     Reading xml data from directory:
+
+     /scratch/as3359/MoS2_bulk_bandsdos/Ta.save/
+     file Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF: wavefunction(s)  4S 4D renormalized
+     file S.pbesol-nl-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBESOL
+                           (   1   4  10   8   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         843     729    210               231296   183661   27194
+     Max         844     730    211               231299   183676   27199
+     Sum        1687    1459    421               462595   367337   54393
+ 
+     Using Slab Decomposition
+ 
+
+     negative rho (up, down):  9.050E-05 0.000E+00
+
+     Gaussian broadening (read from file): ngauss,degauss=  -1    0.001000
+
+ 
+     DOS          :      8.56s CPU      6.14s WALL
+
+ 
+   This run was terminated on:  15:35:34  16Apr2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

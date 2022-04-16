@@ -1,0 +1,225 @@
+
+     Program PWSCF v.6.8 starts on 16Apr2022 at 15:48:23 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 2
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     122190 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from Ta2CH2.nscf.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+
+     Atomic positions and unit cell read from directory:
+     /scratch/as3359/Ta2CH2k_bandsdos/Ta.save/
+ 
+     file Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF: wavefunction(s)  5S 5P renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         765     654    189               239667   189956   30257
+     Max         766     655    190               239702   189957   30288
+     Sum        1531    1309    379               479369   379913   60545
+ 
+     Using Slab Decomposition
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       5.5500  a.u.
+     unit-cell volume          =    1533.2393 (a.u.)^3
+     number of atoms/cell      =            5
+     number of atomic types    =            3
+     number of electrons       =        60.00
+     number of Kohn-Sham states=           36
+     kinetic-energy cutoff     =     150.0000  Ry
+     charge density cutoff     =     700.0000  Ry
+     Exchange-correlation= PBESOL
+                           (   1   4  10   8   0   0   0)
+
+     celldm(1)=   5.550000  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.017295  -0.000177   0.000000 )  
+               a(2) = (  -0.508801   0.881714   0.000000 )  
+               a(3) = (   0.000000   0.000000  10.000000 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  0.983098  0.567305  0.000000 )  
+               b(2) = (  0.000198  1.134269  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.100000 )  
+
+
+     PseudoPot. # 1 for Ta read from file:
+     /shared/home/as3359/pseudo/Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: f099565ffaca9b150a52e9412a28e20b
+     Pseudo is Ultrasoft + core correction, Zval = 27.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3
+     Using radial grid of 1273 points,  8 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+                l(7) =   3
+                l(8) =   3
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for C  read from file:
+     /shared/home/as3359/pseudo/C.pbesol-n-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: 05995be603a8a7c99da3dc4413f31573
+     Pseudo is Ultrasoft + core correction, Zval =  4.0
+     Generated using &quot;atomic&quot; code by A. Dal Corso  v.6.3MaX
+     Using radial grid of 1073 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 3 for H  read from file:
+     /shared/home/as3359/pseudo/H.pbesol-rrkjus_psl.0.1.UPF
+     MD5 check sum: 1dbb1a5c48b1283557b8117eb856a7ca
+     Pseudo is Ultrasoft, Zval =  1.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.2 svn rev. 9415
+     Using radial grid of  929 points,  2 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Ta            27.00   180.94788     Ta( 1.00)
+        C              4.00    12.01070     C ( 1.00)
+        H              1.00     1.00000     H ( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           C   tau(   1) = (   0.0000000   0.0000000   0.0000000  )
+         2           Ta  tau(   2) = (   0.5088008   0.2948413  -0.4364511  )
+         3           Ta  tau(   3) = (  -0.0007447   0.5869407   0.4364532  )
+         4           H   tau(   4) = (  -0.0017928  -0.0015314   0.8341930  )
+         5           H   tau(   5) = (   0.0002769   0.0024412  -0.8341930  )
+
+     number of k points=   113  Marzari-Vanderbilt smearing, width (Ry)=  0.0010
+
+     Number of k-points >= 100: set verbosity='high' to print them.
+
+     Dense  grid:   479369 G-vectors     FFT dimensions: (  48,  48, 480)
+
+     Smooth grid:   379913 G-vectors     FFT dimensions: (  45,  45, 450)
+
+     Estimated max dynamical RAM per process >       2.13 GB
+
+     Estimated total dynamical RAM >       4.25 GB
+
+     The potential is recalculated from file :
+     /scratch/as3359/Ta2CH2k_bandsdos/Ta.save/charge-density
+
+
+     negative rho (up, down):  6.648E-05 0.000E+00
+     Starting wfcs are   40 randomized atomic wfcs
+
+     Band Structure Calculation
+     Davidson diagonalization with overlap
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+     c_bands:  1 eigenvalues not converged
+
+     ethr =  1.00E-13,  avg # of iterations = 88.0
+
+     total cpu time spent up to now is     1001.9 secs
+
+     End of band structure calculation
+
+     Number of k-points >= 100: set verbosity='high' to print the bands.
+
+     the Fermi energy is     0.9610 ev
+     (compare with:     0.9610 eV, computed in scf)
+
+     Writing output data file /scratch/as3359/Ta2CH2k_bandsdos/Ta.save/
+ 
+     init_run     :      9.79s CPU      7.15s WALL (       1 calls)
+     electrons    :   1965.95s CPU    994.32s WALL (       1 calls)
+
+     Called by init_run:
+     wfcinit      :      0.00s CPU      0.00s WALL (       1 calls)
+     potinit      :      0.49s CPU      0.29s WALL (       1 calls)
+     hinit0       :      6.87s CPU      5.21s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :   1965.95s CPU    994.32s WALL (       1 calls)
+     v_of_rho     :      0.37s CPU      0.21s WALL (       1 calls)
+     newd         :      2.09s CPU      1.28s WALL (       1 calls)
+
+     Called by c_bands:
+     init_us_2    :      1.52s CPU      0.76s WALL (     113 calls)
+     cegterg      :   1898.25s CPU    959.07s WALL (     539 calls)
+
+     Called by *egterg:
+     cdiaghg      :     25.71s CPU     13.15s WALL (   10056 calls)
+     h_psi        :   1463.62s CPU    740.36s WALL (   10595 calls)
+     s_psi        :     79.85s CPU     39.99s WALL (   10595 calls)
+     g_psi        :      9.60s CPU      4.82s WALL (    9943 calls)
+
+     Called by h_psi:
+     h_psi:calbec :     63.98s CPU     32.14s WALL (   10595 calls)
+     vloc_psi     :   1303.48s CPU    659.57s WALL (   10595 calls)
+     add_vuspsi   :     84.84s CPU     42.51s WALL (   10595 calls)
+
+     General routines
+     calbec       :     63.88s CPU     32.10s WALL (   10595 calls)
+     fft          :      0.22s CPU      0.12s WALL (      13 calls)
+     ffts         :      0.01s CPU      0.01s WALL (       1 calls)
+     fftw         :   1115.49s CPU    564.99s WALL (  276032 calls)
+     interpolate  :      0.04s CPU      0.02s WALL (       1 calls)
+     davcio       :      1.20s CPU      1.25s WALL (     226 calls)
+ 
+     Parallel routines
+ 
+     PWSCF        :  33m 5.38s CPU  16m50.32s WALL
+
+ 
+   This run was terminated on:  16: 5:13  16Apr2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

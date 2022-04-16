@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=12:00:00
+#SBATCH --time=15:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -43,7 +43,7 @@ export OMP_NUM_THREADS=2
 
 TMP_DIR='/scratch/as3359/Ta2CF2_loop'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/FYP/Ta2CF2/vcr-loop'
+RESULTS_DIR='/shared/home/as3359/FYP/Ta2CF2/VCR-final'
 
 # not a restart
 
@@ -56,8 +56,8 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=60.00
-rcut=300.00
+ecut=70.00
+rcut=700.00
 elthresh=1.0d-12
 pthresh=1.0
 celldm=5.8997
@@ -72,7 +72,7 @@ atom3='F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF'
 atom1_position='Ta       0.3333333330        0.6666666670        0.0084777904   1   1   1'
 atom2_position='C        0.0000000000        0.0000000000        0.0809653684   1   1   1'
 atom3_position='Ta       0.6666666670        0.3333333330        0.1534684720   1   1   1'
-atom4_position='F        0.0000000000        0.0000000000        0.2293479205   1   1   1'
+atom4_position='F        0.3333333330        0.6666666670        0.2293479205   1   1   1'
 atom5_position='F        0.6666666670        0.3333333330       -0.0673918107   1   1   1'
 
 nkx=12

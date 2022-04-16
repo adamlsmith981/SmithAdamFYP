@@ -1,0 +1,7 @@
+&DOS
+    prefix="Ta"
+    outdir="/scratch/as3359/MoS2_bandsdos/"
+    fildos="MoS2.dos.dat"
+    emin=-9.0
+    emax=16.0
+/

@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=14:00:00
+#SBATCH --time=18:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -56,8 +56,8 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=60.00
-rcut=250.00
+ecut=150.00
+rcut=750.00
 elthresh=1.0d-12
 pthresh=1.0
 celldm=5.750
@@ -71,13 +71,13 @@ atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
 atom1_position='Ta            0.3333310091        0.6666639694       -0.0269029980 1 1 1 '
 atom2_position='C            -0.0000006861       -0.0000007950        0.0391217521 1 1 1 '
 atom3_position='Ta            0.6666676137        0.3333344308        0.1129114019 1 1 1 '
-atom4_position='C             0.3333327732        0.6666660249        0.1884924085 1 1 1 '
-atom5_position='Ta           -0.0000007727       -0.0000008897        0.2639695769 1 1 1 '
-atom6_position='C             0.6666677659        0.3333346028        0.3377411373 1 1 1 '
-atom7_position='Ta            0.3333356300        0.6666693238        0.4037611653 1 1 1 '
+atom4_position='C             0.3333327732        0.6666660249        0.2284924085 1 1 1 '
+atom5_position='Ta           -0.0000007727       -0.0000008897        0.3039695769 1 1 1 '
+atom6_position='C             0.6666677659        0.3333346028        0.3677411373 1 1 1 '
+atom7_position='Ta            0.3333356300        0.6666693238        0.4437611653 1 1 1 '
 
-nkx=12
-nky=12
+nkx=15
+nky=15
 
 cell_parameter1='1.046475111  -0.000000172   0.000000000 '
 cell_parameter2='-0.523237704   0.906274738   0.000000000'

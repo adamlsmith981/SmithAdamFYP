@@ -1,0 +1,5 @@
+&BANDS
+    prefix="Ta"
+    outdir="/scratch/as3359/MoS2_bulk_bandsdos/"
+    filband="MoS2.Bandx.dat"
+/
