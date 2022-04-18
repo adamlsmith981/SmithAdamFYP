@@ -56,8 +56,8 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=70.00
-rcut=700.00
+ecut=700.00
+rcut=1200.00
 elthresh=1.0d-12
 pthresh=1.0
 celldm=5.8997
@@ -69,17 +69,17 @@ atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
 atom3='F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF'
 
-atom1_position='Ta       0.3333333330        0.6666666670        0.0084777904   1   1   1'
-atom2_position='C        0.0000000000        0.0000000000        0.0809653684   1   1   1'
-atom3_position='Ta       0.6666666670        0.3333333330        0.1534684720   1   1   1'
-atom4_position='F        0.3333333330        0.6666666670        0.2293479205   1   1   1'
-atom5_position='F        0.6666666670        0.3333333330       -0.0673918107   1   1   1'
+atom1_position='Ta       0.3333333330        0.6666666670        0.0160395343   1   1   1'
+atom2_position='C        0.0000000000        0.0000000000        0.0809729238   1   1   1'
+atom3_position='Ta       0.6666666670        0.3333333330        0.1459074684   1   1   1'
+atom4_position='F        0.3333333330        0.6666666670        0.2291425227   1   1   1'
+atom5_position='F        0.6666666670        0.3333333330       -0.0671947085   1   1   1'
 
-nkx=12
-nky=12
+nkx=15
+nky=15
 
-cell_parameter1='0.946100374   0.000000000   0.000000000'
-cell_parameter2='-0.473050186   0.819346959   0.000000000'
+cell_parameter1='0.965990314  -0.000000000   0.000000000'
+cell_parameter2='-0.482995156   0.836572153   0.000000000'
 cell_parameter3='0.000000000   0.000000000   6.000000000'
 
 prefix='Ta2CF2'
@@ -106,7 +106,7 @@ cat > $prefix.vcrelax.in << EOF
     ecutrho = $rcut
    occupations='smearing',
     smearing='m-v', 
-    degauss=0.005,
+    degauss=0.01,
  /
  &electrons
     mixing_mode = 'plain'
@@ -371,7 +371,7 @@ K_POINTS {automatic}
 EOF
 
 $ECHO " running the vc-relax calculation ; \c"
-$PW_COMMAND -input $prefix.scf.vcrelax$loop_counter.in &> $prefix.scf.vcrelax$loop_counter.out
+
 $ECHO " done"
 
 # Get relevant unprocessed lines from output file that contain relevant data

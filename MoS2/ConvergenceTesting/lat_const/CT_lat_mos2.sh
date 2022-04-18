@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=05:00:00
+#SBATCH --time=12:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -43,7 +43,7 @@ export OMP_NUM_THREADS=2
 
 TMP_DIR='/scratch/as3359/Mos2_ct_lat'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/FYP/MoS2/lat_const_CT'
+RESULTS_DIR='/shared/home/as3359/FYP/MoS2/lat_const_CT-small'
 
 # not a restart
 
@@ -57,7 +57,7 @@ cd $RESULTS_DIR
 
 MX='MoS2'
 
-for i in {5800..6400..50} ; do 
+for i in {6050..6100..2} ; do 
 celldim=$(bc <<< "scale=3;$i/1000")
 # self-consistent calculation
 cat > $MX.scf.$celldim.in << EOF

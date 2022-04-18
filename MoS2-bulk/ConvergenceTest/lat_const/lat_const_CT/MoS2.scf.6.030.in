@@ -1,0 +1,44 @@
+ &control
+    calculation='scf'
+    restart_mode='restart',
+    prefix='MoS2',
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = '/shared/home/as3359/pseudo/',
+    outdir='/scratch/as3359/Mos2_ct_lat/'
+    max_seconds = 7200
+ /
+ &system
+    ibrav= 0, 
+    celldm(1)= 6.030,
+    nat=  6, ntyp= 2,   
+    ecutwfc = 150.00,
+    ecutrho = 600.00
+ /
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-12
+ /
+ &ions
+    ion_dynamics='bfgs'
+ /
+ &cell
+    cell_dynamics='bfgs'
+ /
+CELL_PARAMETERS (alat)
+   0.977325997  -0.000176330   0.000000000
+  -0.488539747   0.846361973   0.000000000
+   0.000000000   0.000000000   8.000000000  
+ATOMIC_SPECIES
+ Mo  95.94  Mo.pbesol-spn-kjpaw_psl.1.0.0.UPF
+ S   32.065    S.pbesol-nl-kjpaw_psl.1.0.0.UPF 
+ATOMIC_POSITIONS (alat)
+Mo            0.0000000000        0.0000000000        0.9844997000
+S             0.4887119000        0.2819702000        1.4701535000
+S             0.4887135000        0.2819635000        0.4988906000
+Mo            0.0000000000        0.0000000000        3.0155003000
+S            -0.4887135000       -0.2819635000        3.5011094000
+S            -0.4887119000       -0.2819702000        2.5298465000
+K_POINTS {automatic}
+ 15 15 1 0 0 0 
