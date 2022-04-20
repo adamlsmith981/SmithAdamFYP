@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Ta2C_loop'
+#SBATCH --job-name='Ta2CH2_vcrelax'
 #SBATCH --output=StdOut.o.%j
 #SBATCH --error=StdErr.e.%j
 
@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=10:00:00
+#SBATCH --time=12:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -35,15 +35,15 @@ PH_COMMAND='mpirun -np 2 ph.x'
 PH_IMAGE_COMMAND="mpirun -np 2 ph.x -ni 1"
 DYNMAT_COMMAND='mpirun -np 1 dynmat.x'
 PLOTBAND_COMMAND='mpirun -np 1 plotband.x'
-BANDS_COMMAND='mpirun -np 2 bands.x'
+BANDS_COMMAND='mpirun -np $NCORES bands.x'
 Q2R_COMMAND='mpirun -np 1 q2r.x'
 MATDYN_COMMAND='mpirun -np 1 matdyn.x'
 
 export OMP_NUM_THREADS=2
 
-TMP_DIR='/scratch/as3359/Ta2C_looping'
+TMP_DIR='/scratch/as3359/Ta2CH2-VCrelax'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/FYP/Ta2C/vcr'
+RESULTS_DIR='/shared/home/as3359/Ta2CH2/VCRELAX-final'
 
 # not a restart
 
@@ -56,31 +56,33 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=50.00
-rcut=300.00
+ecut=70.00
+rcut=700.00
 elthresh=1.0d-12
 pthresh=1.0
 celldm=5.550
 
-nats=3
-ntyp=2
+nats=5
+ntyp=3
 
 atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
+atom3='H    1.000   H.pbesol-rrkjus_psl.0.1.UPF'
 
 atom1_position='C             0.0000000000        0.0000000000        0.0000000000 0 0 0'
-atom2_position='Ta            0.5202621000        0.3003735000       -0.0410275700 1 1 1'
-atom3_position='Ta            0.0000000000        0.6007470000        0.0410275700 1 1 1'
+atom2_position='Ta            0.5088008000        0.2948413000       -0.4364511000 1 1 1'
+atom3_position='Ta            -0.0007447000        0.5869407000        0.4364532000 1 1 1'
+atom4_position='H            -0.0007447000        0.5869407000        0.8341930000 1 1 1'
+atom5_position='H             0.5088008000        0.2948413000      -0.8341930000 1 1 1'
 
 nkx=12
 nky=12
 
-cell_parameter1='1.040524263   0.000000000   0.000000000'
-cell_parameter2='-0.520262131   0.901120444   0.000000000'
+cell_parameter1='1.040617955   0.000000000   0.000000000'
+cell_parameter2='-0.520308977   0.901201584   0.000000000'
 cell_parameter3='0.000000000   0.000000000  10.000000000'
 
-prefix='Ta2C'
-
+prefix='Ta2CH2'
 # vc relax calculation
 cat > $prefix.vcrelax.in << EOF
  &control
@@ -119,10 +121,13 @@ cat > $prefix.vcrelax.in << EOF
 ATOMIC_SPECIES
  $atom1
  $atom2
+ $atom3
 ATOMIC_POSITIONS (crystal)
  $atom1_position
  $atom2_position
  $atom3_position
+ $atom4_position
+ $atom5_position
 K_POINTS {automatic}
  $nkx $nky 1 0 0 0 
 CELL_PARAMETERS (alat= $celldm)
@@ -239,6 +244,7 @@ cat > $prefix.relax.in << EOF
 ATOMIC_SPECIES
  $atom1
  $atom2
+ $atom3
 ATOMIC_POSITIONS (alat)
 $current_atomic_positions
 K_POINTS {automatic}
@@ -299,7 +305,7 @@ bigfdelta=${bigfdelta%.*}
 
 p=$(awk '{print $6 }' Ta2C_H_raw_pressure)
 pp=${p%.*}
-if [ $pp -lt 0 ] 
+if [ $pp -lt 0.0 ] 
 then p=`echo 0 - $p | bc -l` 
 fi
 pdelta=`echo $p - $pthresh | bc -l`
@@ -308,7 +314,7 @@ bigpdelta=${bigpdelta%.*}
 
 # If they have not, loop through vc-relax/relax cycles until they have been
 
-while [ $bigfdelta -gt 0 ]||[ $bigpdelta -gt 0 ]  
+while [ $bigfdelta -gt 0.0 ]||[ $bigpdelta -gt 0.0 ]  
 
 do
 
@@ -357,6 +363,7 @@ $current_cell_parameters
 ATOMIC_SPECIES
  $atom1
  $atom2
+ $atom3
 ATOMIC_POSITIONS (alat)
 $current_atomic_positions
 K_POINTS {automatic}
@@ -460,6 +467,7 @@ $current_cell_parameters
 ATOMIC_SPECIES
  $atom1
  $atom2
+ $atom3
 ATOMIC_POSITIONS (alat)
 $current_atomic_positions
 K_POINTS {automatic}
@@ -562,13 +570,14 @@ $current_cell_parameters
 ATOMIC_SPECIES
  $atom1
  $atom2
+ $atom3
 ATOMIC_POSITIONS (alat)
 $current_atomic_positions
 K_POINTS {automatic}
 $nkx $nky 1 0 0 0
 EOF
 
-# $PW_COMMAND -input $prefix.scf.final.in &> $prefix.scf.final.out
+$PW_COMMAND -input $prefix.scf.final.in &> $prefix.scf.final.out
 $PW_COMMAND <$prefix.scf.final.in > $prefix.scf.final.out
 
 rm -rf $TMP_DIR

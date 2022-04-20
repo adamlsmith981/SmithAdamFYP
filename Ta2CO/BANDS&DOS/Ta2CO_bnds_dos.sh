@@ -19,7 +19,7 @@
 # Specify the account type and usage limits
 
 #SBATCH --account=prj10_phase1
-#SBATCH --time=02:00:00
+#SBATCH --time=03:00:00
 
 #SBATCH --mail-user=as3359@bath.ac.uk
 #SBATCH --mail-type=END
@@ -58,10 +58,10 @@ cd $RESULTS_DIR
 fthresh=1.0d-3
 ethresh=1.0d-4
 ecut=150.00
-rcut=700.00
+rcut=1500.00
 elthresh=1.0d-12
 pthresh=1.0
-celldm=5.650
+celldm=5.550
 
 nats=4
 ntyp=3
@@ -105,9 +105,6 @@ cat > $prefix.scf.in << EOF
     nat=  $nats, ntyp= $ntyp,   
     ecutwfc =$ecut,
     ecutrho = $rcut,
-    occupations='smearing',
-    smearing='m-v', 
-    degauss=0.001,
  /
  &electrons
     mixing_mode = 'plain'

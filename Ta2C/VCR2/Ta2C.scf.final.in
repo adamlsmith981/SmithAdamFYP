@@ -4,16 +4,16 @@
     prefix='Ta',
     tstress = .true.
     tprnfor = .true.
-    pseudo_dir = '/shared/home/as3359/pseudo/',
-    outdir='/scratch/as3359/Ta2C_looping/'
+    pseudo_dir = '/shared/home/lcp34/Ta2C_1_pseudo/',
+    outdir='/scratch/lcp34/Ta2C_loop/'
     max_seconds = 28800
  /
  &system    
     ibrav= 0, 
     celldm(1)= 5.550,
      nat=  3, ntyp= 2,  
-    ecutwfc = 50.00,
-    ecutrho = 300.00,
+    ecutwfc = 70.00,
+    ecutrho = 700.00,
     occupations='smearing',
     smearing='m-v', 
     degauss=0.001,
@@ -24,13 +24,16 @@
     conv_thr =  1.0d-12
  /
 CELL_PARAMETERS (alat)
-   1.034114046   0.000203161   0.000000000
-  -0.516206994   0.898604446   0.000000000
+   1.040524263   0.000000000   0.000000000
+  -0.520262131   0.901120444   0.000000000
    0.000000000   0.000000000  10.000000000
 ATOMIC_SPECIES
  Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
  C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF
+ 
 ATOMIC_POSITIONS (alat)
-
+C             0.0000000000        0.0000000000        0.0000000000
+Ta            0.5202621000        0.3003735000       -0.4102757000
+Ta            0.0000000000        0.6007470000        0.4102757000
 K_POINTS {automatic}
 12 12 1 0 0 0
