@@ -1,0 +1,5 @@
+&BANDS
+    prefix="Ta"
+    outdir="/scratch/as3359/Ta2CH_bandsdos/"
+    filband="Ta2CS.Bandx.dat"
+/

@@ -4,7 +4,7 @@
 
 # Name of job and destinations for outputs
 
-#SBATCH --job-name='Ta2CF_vcr5'
+#SBATCH --job-name='Ta2CF_aboveTa'
 #SBATCH --output=StdOut.o.%j
 #SBATCH --error=StdErr.e.%j
 
@@ -43,7 +43,7 @@ export OMP_NUM_THREADS=2
 
 TMP_DIR='/scratch/as3359/Ta2CF-VCrelax-5'
 PSEUDO_DIR='/shared/home/as3359/pseudo'
-RESULTS_DIR='/shared/home/as3359/Ta2CF/VCRELAX-5'
+RESULTS_DIR='/shared/home/as3359/Ta2CF/VCRELAX-FaboveTa'
 
 # not a restart
 
@@ -56,8 +56,8 @@ cd $RESULTS_DIR
 #assign variables
 fthresh=1.0d-3
 ethresh=1.0d-4
-ecut=65.0
-rcut=600.0
+ecut=70.0
+rcut=700.0
 elthresh=1.0d-7
 pthresh=1.0
 celldm=5.8997
@@ -69,10 +69,10 @@ atom1='Ta 180.94788  Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF'
 atom2='C   12.0107   C.pbesol-n-rrkjus_psl.1.0.0.UPF'
 atom3='F   18.9984  F.pbesol-n-rrkjus_psl.1.0.0.UPF'
 
-atom1_position='Ta       0.3333333330        0.6666666670        0.0426707701    0   0   1'
-atom2_position='C        0.0000000000        0.0000000000        0.0902850154    0   0   1'
-atom3_position='Ta       0.6666666670        0.3333333330        0.1419119551   0   0   1'
-atom4_position='F        0.0000000000        0.0000000000        0.2166719324   1   1   1'
+atom1_position='C             0.0000000000        0.0000000000        0.0000000000 0 0 0'
+atom2_position='Ta            0.6666666670        0.3333333330       -0.0410149592 1 1 1'
+atom3_position='Ta            0.3333333330        0.6666666670        0.0410149592 1 1 1'
+atom4_position='F             0.3333333330        0.6666666670        0.0924039106 1 1 1'
 
 nkx=12
 nky=12

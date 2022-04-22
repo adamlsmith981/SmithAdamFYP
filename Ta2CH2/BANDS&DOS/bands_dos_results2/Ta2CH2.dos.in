@@ -1,0 +1,7 @@
+&DOS
+    prefix="Ta"
+    outdir="/scratch/as3359/Ta2CH2k_bandsdos/"
+    fildos="Ta2CH2.dos.dat"
+    emin=-9.0
+    emax=16.0
+/
